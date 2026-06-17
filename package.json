@@ -8,9 +8,6 @@
     "build": "astro build",
     "preview": "astro preview"
   },
-  "dependencies": {
-    "@fontsource/inter": "^5.2.8"
-  },
   "devDependencies": {
     "astro": "^6.4.7",
     "esbuild": "^0.28.1",
