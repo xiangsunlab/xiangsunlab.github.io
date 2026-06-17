@@ -1,0 +1,173 @@
+---
+import InnerPage from "../components/InnerPage.astro";
+import { getPageData } from "../data/pages";
+import { parseInlineMarkdown } from "../utils/markdown";
+
+const page = await getPageData("software");
+const softwareProjects = page.projects;
+---
+
+<InnerPage
+  title={page.title}
+  eyebrow={page.eyebrow}
+  description={page.description}
+  current="software"
+>
+  <div class="software-grid">
+    {softwareProjects.map((project, index) => (
+      <article data-reveal style={`--reveal-delay: ${index * 80}ms`}>
+        <div class="software-top">
+          <strong>{project.status}</strong>
+        </div>
+        <h2>{project.name}</h2>
+        <p class="description">{project.description}</p>
+        <ul>
+          {project.topics.map((topic) => <li>{topic}</li>)}
+        </ul>
+        <div class="citation">
+          <span>{page.citeLabel}</span>
+          <p set:html={parseInlineMarkdown(project.publication)}></p>
+          {(project.doiUrl || project.softwareUrl) && (
+            <div class="project-links">
+              {project.doiUrl && (
+                <a href={project.doiUrl} target="_blank" rel="noreferrer">
+                  DOI <span aria-hidden="true">↗</span>
+                </a>
+              )}
+              {project.softwareUrl && (
+                <a href={project.softwareUrl} target="_blank" rel="noreferrer">
+                  Software <span aria-hidden="true">↗</span>
+                </a>
+              )}
+            </div>
+          )}
+        </div>
+      </article>
+    ))}
+  </div>
+</InnerPage>
+
+<style>
+  .software-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  article {
+    display: flex;
+    min-height: 31rem;
+    flex-direction: column;
+    padding: clamp(2rem, 5vw, 3.5rem);
+    border-radius: var(--radius-window);
+    border: 1px solid rgba(76, 46, 91, 0.08);
+    background: #f7f3f8;
+    color: var(--color-text);
+  }
+
+  article:nth-child(even) {
+    border: 1px solid var(--color-border);
+    background: #f1f5f5;
+    color: var(--color-text);
+  }
+
+  .software-top {
+    display: flex;
+    justify-content: flex-end;
+    color: var(--color-purple);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  article:nth-child(even) .software-top {
+    color: var(--color-purple);
+  }
+
+  h2 {
+    margin: 2rem 0 1rem;
+    color: inherit;
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  .description {
+    color: var(--color-muted);
+    font-size: 1.05rem;
+  }
+
+  article:nth-child(even) .description {
+    color: var(--color-muted);
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0 2rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    padding: 0.4rem 0.65rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-window);
+    font-size: 0.75rem;
+  }
+
+  article:nth-child(even) li {
+    border-color: var(--color-border);
+  }
+
+  .citation {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  article:nth-child(even) .citation {
+    border-color: var(--color-border);
+  }
+
+  .citation span {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .citation p {
+    margin-bottom: 0;
+    font-size: 0.85rem;
+  }
+
+  .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .project-links a {
+    display: inline-flex;
+    min-height: 2.5rem;
+    padding: 0.55rem 0.85rem;
+    align-items: center;
+    border: 1px solid currentColor;
+    border-radius: var(--radius-window);
+    color: inherit;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  @media (max-width: 48rem) {
+    .software-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

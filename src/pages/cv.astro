@@ -1,0 +1,126 @@
+---
+import InnerPage from "../components/InnerPage.astro";
+import { getPageData } from "../data/pages";
+import { parseInlineMarkdown } from "../utils/markdown";
+
+const page = await getPageData("cv");
+const {
+  education,
+  experience,
+  teaching,
+  awards,
+  invitedLectures,
+  oralPresentations,
+  posters,
+  services,
+  certifications,
+  professionalAffiliations,
+} = page;
+---
+
+<InnerPage
+  title={page.title}
+  eyebrow={page.eyebrow}
+  description={page.description}
+  current="people"
+>
+  <div class="cv-layout">
+    <aside class="contact-card" aria-label={`${page.contact.name} ${page.labels.contact}`}>
+      <img src={page.contact.image} width="1024" height="684" alt={page.contact.imageAlt} />
+      <div class="contact-content">
+        <p class="contact-label">{page.labels.contact}</p>
+        <h2>{page.contact.name}</h2>
+        <p class="contact-title">{page.contact.role}</p>
+        <p class="contact-affiliation">{page.contact.affiliation}</p>
+        <div class="contact-details">
+          <p><span>{page.labels.office}</span>{page.contact.office}</p>
+          <p><span>{page.labels.email}</span><a href={`mailto:${page.contact.email}`}>{page.contact.email}</a></p>
+        </div>
+      </div>
+    </aside>
+
+    <div class="cv-content">
+      <section>
+        <h2>{page.labels.education}</h2>
+        <div class="education-list">
+          {education.map(([degree, institution, year, note]) => (
+            <article><h3>{degree}</h3><p>{institution}</p><time>{year}</time>{note && <small set:html={parseInlineMarkdown(note)}></small>}</article>
+          ))}
+        </div>
+      </section>
+
+      <section><h2>{page.labels.experience}</h2><ul>{experience.map((item) => <li set:html={parseInlineMarkdown(item)}></li>)}</ul></section>
+      <section><h2>{page.labels.teaching}</h2><ul>{teaching.map((item) => <li set:html={parseInlineMarkdown(item)}></li>)}</ul></section>
+      <section><h2>{page.labels.awards}</h2><ul>{awards.map((item) => <li set:html={parseInlineMarkdown(item)}></li>)}</ul></section>
+
+      <section class="publication-callout">
+        <div><h2>{page.labels.publications}</h2><p set:html={parseInlineMarkdown(page.labels.publicationDescription)}></p></div>
+        <a href={page.labels.publicationHref}>{page.labels.publicationAction}&nbsp;<span aria-hidden="true">→</span></a>
+      </section>
+
+      <section>
+        <h2>{page.labels.presentations}</h2>
+        <p class="expand-hint">{page.labels.expandHint}</p>
+        <details open><summary><span>{page.labels.invitedLectures} <small>{invitedLectures.length} {page.labels.entries}</small></span><span class="toggle-label"><span class="open-label">{page.labels.collapse}</span><span class="closed-label">{page.labels.expand}</span><b aria-hidden="true">⌄</b></span></summary><ul>{invitedLectures.map((item) => <li set:html={parseInlineMarkdown(item)}></li>)}</ul></details>
+        <details><summary><span>{page.labels.oralPresentations} <small>{oralPresentations.length} {page.labels.entries}</small></span><span class="toggle-label"><span class="open-label">{page.labels.collapse}</span><span class="closed-label">{page.labels.expand}</span><b aria-hidden="true">⌄</b></span></summary><ul>{oralPresentations.map((item) => <li set:html={parseInlineMarkdown(item)}></li>)}</ul></details>
+        <details><summary><span>{page.labels.posterPresentations} <small>{posters.length} {page.labels.entries}</small></span><span class="toggle-label"><span class="open-label">{page.labels.collapse}</span><span class="closed-label">{page.labels.expand}</span><b aria-hidden="true">⌄</b></span></summary><ul>{posters.map((item) => <li set:html={parseInlineMarkdown(item)}></li>)}</ul></details>
+      </section>
+
+      <section><h2>{page.labels.certifications}</h2><ul>{certifications.map((item) => <li set:html={parseInlineMarkdown(item)}></li>)}</ul></section>
+      <section><h2>{page.labels.professionalAffiliations}</h2><ul>{professionalAffiliations.map((item) => <li set:html={parseInlineMarkdown(item)}></li>)}</ul></section>
+      <section><h2>{page.labels.service}</h2><ul>{services.map((item) => <li set:html={parseInlineMarkdown(item)}></li>)}</ul></section>
+    </div>
+  </div>
+</InnerPage>
+
+<style>
+  .cv-layout { display: grid; gap: 3rem; }
+  .contact-card { display: grid; grid-template-columns: 14rem minmax(0, 1fr); gap: 2rem; padding: 1.25rem; align-items: center; border: 1px solid var(--color-border); border-radius: var(--radius-window); background: var(--color-white); }
+  .contact-card img { width: 14rem; height: 14rem; aspect-ratio: 1 / 1; border-radius: var(--radius-window); object-fit: cover; }
+  .contact-content { min-width: 0; }
+  .contact-card .contact-label { margin: 0 0 0.25rem; color: var(--color-purple); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+  .contact-card h2 { margin: 0; font-family: var(--font-display); font-size: clamp(1.65rem, 3vw, 2.15rem); }
+  .contact-card .contact-title { margin: 0.25rem 0 0; color: var(--color-text); font-size: 1rem; font-weight: 700; line-height: 1.45; }
+  .contact-card .contact-affiliation { margin: 0.15rem 0 0; color: var(--color-muted); font-size: 0.9rem; }
+  .contact-details { display: grid; grid-template-columns: minmax(16rem, 1.35fr) minmax(12rem, 1fr); gap: 1.5rem; margin-top: 1.15rem; padding-top: 1rem; border-top: 1px solid var(--color-border); }
+  .contact-details p { margin: 0; color: var(--color-muted); font-size: 0.85rem; line-height: 1.55; }
+  .contact-details span { display: block; margin-bottom: 0.2rem; color: var(--color-text); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+  .contact-details a { color: var(--color-purple); font-weight: 750; }
+  .cv-content { min-width: 0; }
+  section + section { margin-top: 3rem; }
+  section > h2, .publication-callout h2 { margin: 0 0 1rem; padding-bottom: 0.65rem; border-bottom: 1px solid var(--color-border); color: var(--color-ink); font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.2rem); }
+  ul { display: grid; gap: 0.65rem; margin: 0; padding-left: 1.2rem; }
+  li { color: var(--color-text); line-height: 1.55; }
+  .education-list { display: grid; gap: 0.75rem; }
+  .education-list article { display: grid; grid-template-columns: minmax(0, 1fr) auto; padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-window); }
+  .education-list h3 { margin: 0; font-size: 1rem; }
+  .education-list p { margin: 0.25rem 0 0; color: var(--color-muted); }
+  .education-list time { grid-column: 2; grid-row: 1 / 3; color: var(--color-purple); font-weight: 800; }
+  .education-list small { grid-column: 1 / -1; margin-top: 0.45rem; color: var(--color-muted); }
+  .publication-callout { display: flex; padding: 1.4rem; align-items: center; justify-content: space-between; gap: 1.5rem; border-radius: var(--radius-window); background: var(--color-purple); color: white; }
+  .publication-callout h2 { padding: 0; border: 0; color: white; }
+  .publication-callout p { margin: 0; color: #eee5f4; }
+  .publication-callout a { flex: 0 0 auto; padding: 0.75rem 1rem; border-radius: var(--radius-window); background: white; color: var(--color-purple); font-weight: 800; text-decoration: none; }
+  details { border-top: 1px solid var(--color-border); }
+  .expand-hint { margin: -0.35rem 0 0.8rem; color: var(--color-muted); font-size: 0.88rem; }
+  summary { display: flex; min-height: 3.5rem; padding: 1rem; align-items: center; justify-content: space-between; border-radius: var(--radius-window); color: var(--color-purple); cursor: pointer; font-weight: 800; transition: background 180ms ease; }
+  summary:hover { background: var(--color-soft); }
+  summary::marker { content: ""; }
+  summary small { display: block; margin-top: 0.2rem; color: var(--color-muted); font-size: 0.72rem; font-weight: 650; }
+  .toggle-label { display: inline-flex; align-items: center; gap: 0.55rem; color: var(--color-muted); font-size: 0.75rem; font-weight: 750; }
+  .toggle-label b { display: inline-grid; width: 1.8rem; height: 1.8rem; place-items: center; border-radius: 999px; background: var(--color-purple); color: white; font-size: 1rem; transition: transform 180ms ease; }
+  details[open] .toggle-label b { transform: rotate(180deg); }
+  details[open] .closed-label, details:not([open]) .open-label { display: none; }
+  details ul { padding-bottom: 1.25rem; }
+  @media (max-width: 48rem) {
+    .contact-card { grid-template-columns: 11rem minmax(0, 1fr); gap: 1.5rem; }
+    .contact-card img { width: 11rem; height: 11rem; }
+    .contact-details { grid-template-columns: 1fr; gap: 0.75rem; }
+  }
+  @media (max-width: 34rem) {
+    .contact-card { grid-template-columns: 1fr; }
+    .contact-card img { width: 100%; height: auto; grid-row: auto; }
+    .publication-callout { align-items: flex-start; flex-direction: column; }
+    .toggle-label > span { display: none; }
+  }
+</style>

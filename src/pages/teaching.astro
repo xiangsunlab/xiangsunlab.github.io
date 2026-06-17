@@ -1,0 +1,368 @@
+---
+import InnerPage from "../components/InnerPage.astro";
+import { getPageData } from "../data/pages";
+import { parseInlineMarkdown } from "../utils/markdown";
+
+const page = await getPageData("teaching");
+const undergraduateCourses = page.undergraduateCourses;
+const graduateCourses = page.graduateCourses;
+---
+
+<InnerPage
+  title={page.title}
+  eyebrow={page.eyebrow}
+  description={page.description}
+  current="teaching"
+>
+  <section class="teaching-philosophy" data-reveal>
+    <div class="quotation">
+      <p class="quote">{page.quote}</p>
+      <p class="quote-credit">{page.quoteCredit}</p>
+    </div>
+    <div>
+      <p>{page.philosophy}</p>
+    </div>
+  </section>
+
+  <section class="featured-course" data-reveal>
+    <div>
+      <p class="section-label">{page.featuredCourse.label}</p>
+      <p class="course-code">{page.featuredCourse.code}</p>
+      <h2>{page.featuredCourse.title}</h2>
+      <p>{page.featuredCourse.term}</p>
+    </div>
+    <a
+      href={page.featuredCourse.syllabusUrl}
+      target="_blank"
+      rel="noreferrer"
+    >
+      {page.featuredCourse.syllabusLabel} <span aria-hidden="true">↗</span>
+    </a>
+  </section>
+
+  <section class="course-section">
+    <header class="section-heading" data-reveal>
+      <h2>{page.undergraduateTitle}</h2>
+      <p>{page.undergraduateIntro}</p>
+    </header>
+
+    <div class="course-list">
+      {undergraduateCourses.map((course) => (
+        <article class="course-card" data-reveal>
+          <div class="course-meta">
+            <p class="course-code">{course.code}</p>
+            <div>
+              <span class="course-term">{course.terms}</span>
+              {course.location && <span class="course-location">{course.location}</span>}
+            </div>
+          </div>
+          <div class="course-body">
+            <h3>{course.title}</h3>
+            <p>{course.description}</p>
+            {course.prerequisites && (
+              <p class="course-detail"><strong>{page.prerequisitesLabel}</strong>{course.prerequisites}</p>
+            )}
+            {course.note && <p class="course-note">{course.note}</p>}
+            {course.syllabus && (
+              <a href={course.syllabus.href} target="_blank" rel="noreferrer">
+                {course.syllabus.label} <span aria-hidden="true">↗</span>
+              </a>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="course-section">
+    <header class="section-heading" data-reveal>
+      <h2>{page.graduateTitle}</h2>
+      <p>{page.graduateIntro}</p>
+    </header>
+
+    <div class="course-list">
+      {graduateCourses.map((course) => (
+        <article class="course-card" data-reveal>
+          <div class="course-meta">
+            <p class="course-code">{course.code}</p>
+            <div>
+              <span class="course-term">{course.terms}</span>
+              {course.location && <span class="course-location">{course.location}</span>}
+            </div>
+          </div>
+          <div class="course-body">
+            <h3>{course.title}</h3>
+            <p>{course.description}</p>
+            {course.note && <p class="course-note">{course.note}</p>}
+            {course.syllabus && (
+              <a href={course.syllabus.href} target="_blank" rel="noreferrer">
+                {course.syllabus.label} <span aria-hidden="true">↗</span>
+              </a>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</InnerPage>
+
+<style>
+  .teaching-philosophy {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-window);
+    background: var(--color-white);
+  }
+
+  .quote {
+    margin: 0;
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-size: clamp(1.65rem, 3.4vw, 2.7rem);
+    line-height: 1.15;
+  }
+
+  .teaching-philosophy > div:last-child > p {
+    margin: 0;
+    color: var(--color-text);
+    font-size: clamp(1.05rem, 1.8vw, 1.22rem);
+    line-height: 1.75;
+  }
+
+  .quote-credit {
+    margin: 1rem 0 0;
+    color: var(--color-muted);
+    font-size: clamp(1.05rem, 1.8vw, 1.22rem);
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  .section-label {
+    margin: 0;
+    color: var(--color-purple);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .course-code {
+    margin: 0;
+    color: var(--color-purple);
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 2.4vw, 1.7rem);
+    font-weight: 650;
+    letter-spacing: -0.01em;
+  }
+
+  .featured-course {
+    display: flex;
+    margin-top: 2rem;
+    padding: clamp(1.5rem, 4vw, 2.25rem);
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    border-radius: var(--radius-window);
+    background: var(--color-purple);
+    color: white;
+  }
+
+  .featured-course .section-label,
+  .featured-course .course-code {
+    color: #e4d7eb;
+  }
+
+  .featured-course .course-code {
+    margin-top: 1.25rem;
+  }
+
+  .featured-course h2 {
+    margin: 0.3rem 0 0.4rem;
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 500;
+  }
+
+  .featured-course p:last-child {
+    margin: 0;
+    color: #eee7f1;
+  }
+
+  .featured-course a,
+  .course-body a {
+    display: inline-flex;
+    min-height: 2.75rem;
+    padding: 0.65rem 1rem;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: var(--radius-window);
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform 180ms ease, background 180ms ease;
+  }
+
+  .featured-course a {
+    flex: 0 0 auto;
+    background: white;
+    color: var(--color-purple);
+  }
+
+  .featured-course a:hover,
+  .course-body a:hover {
+    transform: translateY(-2px);
+  }
+
+  .course-section {
+    margin-top: clamp(4rem, 8vw, 7rem);
+  }
+
+  .section-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.65fr);
+    gap: 1.5rem 3rem;
+    align-items: end;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-heading h2 {
+    margin: 0;
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.6rem);
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  .section-heading > p:last-child {
+    margin: 0;
+    color: var(--color-muted);
+    line-height: 1.6;
+  }
+
+  .course-list {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .course-card {
+    display: grid;
+    grid-template-columns: minmax(11rem, 0.32fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-window);
+    background: var(--color-white);
+  }
+
+  .course-meta {
+    display: grid;
+    align-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .course-meta div {
+    display: grid;
+    gap: 0.35rem;
+    color: var(--color-muted);
+    font-size: 0.82rem;
+  }
+
+  .course-term,
+  .course-location {
+    color: var(--color-text);
+    font-size: 1rem;
+    font-weight: 650;
+    line-height: 1.45;
+  }
+
+  .course-body h3 {
+    margin: 0 0 0.75rem;
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+    font-weight: 600;
+  }
+
+  .course-body > p {
+    margin: 0;
+    color: var(--color-text);
+    line-height: 1.68;
+  }
+
+  .course-body .course-detail,
+  .course-body .course-note {
+    margin-top: 0.9rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-muted);
+    font-size: 0.88rem;
+  }
+
+  .course-detail strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--color-text);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .course-body .course-note {
+    padding: 0.85rem 1rem;
+    border: 0;
+    border-left: 3px solid var(--color-purple);
+    background: var(--color-soft);
+  }
+
+  .course-body a {
+    margin-top: 1rem;
+    border: 1px solid var(--color-border);
+    background: var(--color-soft);
+    color: var(--color-purple);
+    font-size: 0.82rem;
+  }
+
+  @media (max-width: 48rem) {
+    .teaching-philosophy,
+    .section-heading,
+    .course-card {
+      grid-template-columns: 1fr;
+    }
+
+    .featured-course {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .course-meta {
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: start;
+    }
+
+    .course-meta div {
+      justify-items: end;
+      text-align: right;
+    }
+  }
+
+  @media (max-width: 30rem) {
+    .course-meta {
+      grid-template-columns: 1fr;
+    }
+
+    .course-meta div {
+      justify-items: start;
+      text-align: left;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .featured-course a,
+    .course-body a {
+      transition: none;
+    }
+  }
+</style>

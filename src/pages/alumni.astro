@@ -1,0 +1,110 @@
+---
+import InnerPage from "../components/InnerPage.astro";
+import { getPageData } from "../data/pages";
+import { parseInlineMarkdown } from "../utils/markdown";
+
+const page = await getPageData("alumni");
+const alumniPeople = page.people;
+---
+
+<InnerPage
+  title={page.title}
+  eyebrow={page.eyebrow}
+  description={page.description}
+  current="people"
+>
+  <div class="alumni-list">
+    {alumniPeople.map((person, index) => (
+      <article data-reveal="soft" style={`--reveal-delay: ${(index % 3) * 50}ms`}>
+        <span class="index">{String(index + 1).padStart(2, "0")}</span>
+        <div>
+          <h2>{person.name}</h2>
+          <p class="former-role">{person.formerRole}</p>
+          {person.affiliation && (
+            <p class="affiliation">{person.affiliation}</p>
+          )}
+          {person.current && (
+            <p class="current-position">{page.nowLabel} {person.current}</p>
+          )}
+        </div>
+      </article>
+    ))}
+  </div>
+
+  <a class="back-link" href={page.backHref}><span aria-hidden="true">←</span> {page.backLabel}</a>
+</InnerPage>
+
+<style>
+  .alumni-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+  }
+
+  article {
+    display: grid;
+    grid-template-columns: 2.4rem minmax(0, 1fr);
+    gap: 1rem;
+    padding: 1.2rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-window);
+    background: var(--color-white);
+  }
+
+  .index {
+    display: grid;
+    width: 2.4rem;
+    height: 2.4rem;
+    place-items: center;
+    border-radius: 999px;
+    background: var(--color-soft);
+    color: var(--color-purple);
+    font-size: 0.75rem;
+    font-weight: 850;
+  }
+
+  h2 {
+    margin: 0;
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 600;
+    line-height: 1.15;
+  }
+
+  p {
+    margin: 0.3rem 0 0;
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .former-role {
+    color: var(--color-purple);
+    font-weight: 750;
+  }
+
+  .current-position {
+    color: var(--color-text);
+  }
+
+  .back-link {
+    display: inline-flex;
+    min-height: 2.75rem;
+    margin-top: 2rem;
+    padding: 0.7rem 1rem;
+    align-items: center;
+    gap: 0.6rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-window);
+    color: var(--color-purple);
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  @media (max-width: 44rem) {
+    .alumni-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

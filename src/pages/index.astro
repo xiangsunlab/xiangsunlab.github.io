@@ -1,0 +1,475 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import { getPageData } from "../data/pages";
+import { getNewsItems } from "../data/news";
+import { parseInlineMarkdown } from "../utils/markdown";
+
+const page = await getPageData("home");
+const publicationsPage = await getPageData("publications");
+const newsItems = await getNewsItems();
+
+const latestPublications = publicationsPage.publications
+  .filter((publication) =>
+    publication.doiUrl && publication.journalName !== publicationsPage.labels.underReview
+  )
+  .sort((a, b) => b.number - a.number)
+  .slice(0, 4);
+
+const latestNews = newsItems.slice(0, 10);
+---
+
+<BaseLayout title={page.browserTitle} description={page.description}>
+  <SiteHeader current="home" />
+
+  <main id="main-content">
+    <section class="hero section-shell">
+      <div class="hero-copy" data-reveal>
+        <p class="eyebrow">{page.eyebrow}</p>
+        <h1>{page.heroTitle}</h1>
+        <p class="group-overview" set:html={parseInlineMarkdown(page.groupOverview)}></p>
+        <div class="hero-actions">
+          <a class="button primary" href={page.primaryAction.href}>{page.primaryAction.label}&nbsp;<span aria-hidden="true">→</span></a>
+          <a class="button secondary" href={page.secondaryAction.href}>{page.secondaryAction.label}&nbsp;<span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <figure class="group-photo" data-reveal="soft" style="--reveal-delay: 100ms">
+        <img
+          src={page.heroImage}
+          width="1024"
+          height="694"
+          alt={page.heroAlt}
+          fetchpriority="high"
+        />
+        <figcaption>{page.heroCaption}</figcaption>
+      </figure>
+    </section>
+
+    <section class="publications section-shell">
+      <header class="section-heading" data-reveal>
+        <div>
+          <p class="eyebrow">{page.publicationsEyebrow}</p>
+          <h2>{page.publicationsTitle}</h2>
+          <p set:html={parseInlineMarkdown(page.publicationsDescription)}></p>
+        </div>
+        <a class="button primary section-link" href={page.allPublicationsHref}>
+          {page.allPublicationsLabel}&nbsp;<span aria-hidden="true">→</span>
+        </a>
+      </header>
+
+      <div class="publication-grid">
+        {latestPublications.map((publication, index) => (
+          <article
+            class="publication-card"
+            data-reveal
+            style={`--reveal-delay: ${(index % 2) * 80}ms`}
+          >
+            <div class="publication-image">
+              <img
+                src={publication.image}
+                alt={publication.imageAlt}
+                width="1200"
+                height="800"
+                loading="lazy"
+              />
+            </div>
+            <div class="publication-copy">
+              <p class="publication-type">
+                {publication["publication-type"] ?? publicationsPage.defaultPublicationType}
+              </p>
+              <h3>
+                <a href={publication.doiUrl} target="_blank" rel="noreferrer">
+                  {publication.title}
+                </a>
+              </h3>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="news">
+      <div class="section-shell">
+        <header class="section-heading" data-reveal>
+          <div>
+            <p class="eyebrow">{page.newsEyebrow}</p>
+            <h2>{page.newsTitle}</h2>
+          </div>
+          <a class="button primary section-link" href={page.allNewsHref}>
+            {page.allNewsLabel}&nbsp;<span aria-hidden="true">→</span>
+          </a>
+        </header>
+
+        <div class="news-grid">
+          {latestNews.map((item, index) => (
+            <article
+              class="news-item"
+              data-reveal
+              style={`--reveal-delay: ${(index % 2) * 60}ms`}
+            >
+              <time datetime={item.datetime}>{item.date}</time>
+              <h3><a href={`/news/#${item.id}`}>{item.title}</a></h3>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="join section-shell" data-reveal>
+      <div>
+        <p class="eyebrow">{page.joinEyebrow}</p>
+        <h2>{page.joinTitle}</h2>
+      </div>
+      <div>
+        <p set:html={parseInlineMarkdown(page.joinDescription)}></p>
+        <a class="button primary" href={page.joinAction.href}>{page.joinAction.label}&nbsp;<span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  .section-shell {
+    width: min(100% - 2rem, 76rem);
+    margin-inline: auto;
+  }
+
+  .hero {
+    padding: clamp(1.2rem, 2.4vw, 2.1rem) 0 clamp(5rem, 9vw, 8rem);
+  }
+
+  .hero-copy {
+    max-width: none;
+  }
+
+  .eyebrow {
+    margin: 0 0 1rem;
+    color: var(--color-purple);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin-top: 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: var(--color-ink);
+    font-family: var(--font-display);
+  }
+
+  h1 {
+    max-width: none;
+    margin-bottom: 1.7rem;
+    font-size: clamp(2.4rem, 6.3vw, 5.4rem);
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    line-height: 0.94;
+    white-space: nowrap;
+  }
+
+  h2 {
+    font-size: clamp(2.2rem, 4.5vw, 4rem);
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+
+  .group-overview {
+    max-width: none;
+    margin-bottom: 0;
+    color: var(--color-muted);
+    font-size: clamp(1.02rem, 1.5vw, 1.16rem);
+    line-height: 1.82;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-window);
+    font-weight: 750;
+    text-decoration: none;
+    transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+  }
+
+  .button {
+    min-height: 3rem;
+    padding: 0.75rem 1.1rem;
+    border: 1px solid var(--color-purple);
+    font-size: 0.9rem;
+  }
+
+  .button.primary {
+    background: var(--color-purple);
+    color: white;
+  }
+
+  .button.primary:hover {
+    background: var(--color-purple-dark);
+  }
+
+  .button.secondary {
+    color: var(--color-purple);
+  }
+
+  .button.secondary:hover {
+    background: var(--color-soft);
+  }
+
+  .group-photo {
+    width: 75%;
+    margin: clamp(2.75rem, 5vw, 4.5rem) auto 0;
+  }
+
+  .group-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-window);
+    box-shadow: 0 1.8rem 4rem rgba(30, 19, 40, 0.11);
+  }
+
+  .group-photo figcaption {
+    padding-top: 0.75rem;
+    color: var(--color-muted);
+    font-size: 0.75rem;
+  }
+
+  .publications {
+    padding: clamp(5rem, 9vw, 8rem) 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .section-heading > div {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .section-heading h2 {
+    margin-bottom: 0.7rem;
+  }
+
+  .section-heading p:not(.eyebrow) {
+    max-width: none;
+    margin-bottom: 0;
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
+
+  .section-link {
+    flex: 0 0 auto;
+  }
+
+  .publication-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .publication-card {
+    display: grid;
+    grid-template-rows: 18rem minmax(0, 1fr);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-window);
+    background: white;
+  }
+
+  .publication-image {
+    display: grid;
+    min-width: 0;
+    min-height: 0;
+    place-items: center;
+    padding: 0.1rem;
+    background: white;
+  }
+
+  .publication-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 17.8rem;
+    object-fit: contain;
+  }
+
+  .publication-copy {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: clamp(1.3rem, 2.8vw, 1.9rem);
+    background: #f7f3f8;
+  }
+
+  .publication-card:nth-child(even) .publication-copy {
+    background: #f1f5f5;
+  }
+
+  .publication-type {
+    margin-bottom: 0.7rem;
+    color: var(--color-purple);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .publication-copy h3 {
+    margin-bottom: 1.25rem;
+    font-size: clamp(1.2rem, 2vw, 1.65rem);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.18;
+  }
+
+  .publication-copy h3 a {
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+
+  .publication-copy h3 a:hover {
+    color: var(--color-purple);
+  }
+
+  .news {
+    margin-inline: auto;
+    padding: clamp(5rem, 9vw, 8rem) 0;
+    background: #f5f4f7;
+  }
+
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(2.5rem, 7vw, 6rem);
+  }
+
+  .news-item {
+    padding: 1.25rem 0 1.4rem;
+    border-top: 1px solid rgba(38, 31, 44, 0.16);
+  }
+
+  .news-item time {
+    display: block;
+    margin-bottom: 0.45rem;
+    color: var(--color-purple);
+    font-size: 0.86rem;
+    font-weight: 800;
+  }
+
+  .news-item h3 {
+    margin-bottom: 0;
+    font-size: clamp(1.05rem, 1.7vw, 1.28rem);
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  .news-item a {
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+
+  .news-item a:hover {
+    color: var(--color-purple);
+  }
+
+  .join {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+    align-items: end;
+    gap: 3rem;
+    padding: clamp(5rem, 10vw, 9rem) 0;
+  }
+
+  .join h2 {
+    margin-bottom: 0;
+  }
+
+  .join > div:last-child {
+    display: grid;
+    justify-items: start;
+  }
+
+  .join > div:last-child p {
+    color: var(--color-muted);
+  }
+
+  @media (max-width: 900px) {
+    .publication-grid,
+    .news-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .hero {
+      padding-top: 1.2rem;
+    }
+
+    .group-overview {
+      font-size: 1rem;
+      line-height: 1.72;
+    }
+
+    h1 {
+      white-space: normal;
+    }
+
+    .group-photo {
+      width: 100%;
+    }
+
+    .publication-card {
+      grid-template-rows: 15rem minmax(0, 1fr);
+    }
+
+    .publication-image {
+      padding: 0.75rem;
+    }
+
+    .publication-copy {
+      padding: 1.1rem;
+    }
+
+    .publication-copy h3 {
+      font-size: 1.08rem;
+    }
+
+    .join {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+</style>

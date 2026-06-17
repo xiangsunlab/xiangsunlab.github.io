@@ -1,0 +1,401 @@
+---
+import InnerPage from "../components/InnerPage.astro";
+import { getPageData } from "../data/pages";
+import { parseInlineMarkdown } from "../utils/markdown";
+
+const page = await getPageData("people");
+const peopleGroups = page.groups.filter((group) => group.people.length > 0);
+
+const initialsFor = (name: string) =>
+  name
+    .split(/\s+/)
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+---
+
+<InnerPage
+  title={page.title}
+  eyebrow={page.eyebrow}
+  description={page.description}
+  current="people"
+>
+  <div class="people-sections">
+    {peopleGroups.map((group) => (
+      <section>
+        <div class="section-title">
+          <p>{group.heading}</p>
+        </div>
+
+        <div class="people-list">
+          {group.people.map((person, index) => (
+            <article data-reveal="soft" style={`--reveal-delay: ${(index % 3) * 60}ms`}>
+              <div class="portrait">
+                {person.image ? (
+                  <img
+                    src={person.image}
+                    width="1024"
+                    height="683"
+                    alt={`Portrait of ${person.name}`}
+                    loading="lazy"
+                  />
+                ) : (
+                  <span aria-hidden="true">{initialsFor(person.name)}</span>
+                )}
+              </div>
+
+              <div class="person-details">
+                <div class="person-heading">
+                  <div>
+                    <h2>{person.name}</h2>
+                    {person.email && <strong class="email-address" href={`mailto:${person.email}`}>{person.email}</strong>}
+                    <p class="role">{person.role}</p>
+                  </div>
+
+                  <div class="profile-links">
+                    {person.cvUrl && <a href={person.cvUrl}>{page.labels.cv}&nbsp;<span aria-hidden="true">→</span></a>}
+                    {person.orcidUrl && (
+                      <a href={person.orcidUrl} target="_blank" rel="noreferrer">
+                        {page.labels.orcid}<span aria-hidden="true">↗</span>
+                      </a>
+                    )}
+                  </div>
+                </div>
+
+                <dl>
+                  {person.education && (
+                    <div>
+                      <dt>{page.labels.education}</dt>
+                      <dd set:html={parseInlineMarkdown(person.education)}></dd>
+                    </div>
+                  )}
+                  {person.affiliations && (
+                    <div class="affiliations-row">
+                      <dd class="affiliations-content">
+                        <ul class="affiliation-list">
+                          {person.affiliations.map((affiliation) => (
+                            <li>
+                              {affiliation.url ? (
+                                <>
+                                  {affiliation.prefix}
+                                  <a href={affiliation.url} target="_blank" rel="noreferrer">
+                                    {affiliation.label}<span aria-hidden="true">↗</span>
+                                  </a>
+                                </>
+                              ) : (
+                                affiliation.label
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      </dd>
+                    </div>
+                  )}
+                  {person.project && (
+                    <div>
+                      <dt>{page.labels.project}</dt>
+                      <dd set:html={parseInlineMarkdown(person.project)}></dd>
+                    </div>
+                  )}
+                </dl>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+
+  <aside class="alumni-entry" data-reveal>
+    <div>
+      <p>{page.alumniCallout.label}</p>
+      <h2>{page.alumniCallout.title}</h2>
+      <span set:html={parseInlineMarkdown(page.alumniCallout.description)}></span>
+    </div>
+    <a href={page.alumniCallout.href}>
+      {page.alumniCallout.linkLabel}
+      <span aria-hidden="true" style="color: currentColor; display: inline; margin: 0;">→</span>
+    </a>
+  </aside>
+</InnerPage>
+
+<style>
+  :global(.content-slot) {
+    margin-top: 2rem;
+  }
+
+  .people-sections {
+    display: grid;
+    width: min(100%, 64rem);
+    margin-inline: auto;
+    gap: 2rem;
+  }
+
+  .section-title {
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .section-title p {
+    margin: 0;
+    color: var(--color-purple);
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 2.5vw, 1.7rem);
+    font-weight: 800;
+    letter-spacing: -0.015em;
+  }
+
+  .people-list {
+    display: grid;
+    gap: 1rem;
+  }
+
+  article {
+    display: grid;
+    grid-template-columns: clamp(11rem, 19vw, 13rem) minmax(0, 1fr);
+    gap: clamp(1.25rem, 3vw, 2rem);
+    padding: 1rem;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-window);
+    background: var(--color-white);
+  }
+
+  .portrait {
+    display: grid;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    place-items: center;
+    border-radius: var(--radius-window);
+    background: var(--color-soft);
+  }
+
+  .portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .portrait > span {
+    color: var(--color-purple);
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.6rem);
+    font-weight: 650;
+    letter-spacing: 0.04em;
+  }
+
+  .person-details {
+    min-width: 0;
+    padding: 0.35rem 0;
+  }
+
+  .person-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  h2 {
+    margin: 0;
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-size: clamp(1.65rem, 3vw, 2.25rem);
+    font-weight: 600;
+    line-height: 1.05;
+  }
+
+  .role {
+    margin: 0.4rem 0 0;
+    color: var(--color-purple);
+    font-weight: 750;
+  }
+
+  .email-address {
+    display: inline-block;
+    margin-top: 0.35rem;
+    color: var(--color-text);
+    font-size: 0.9rem;
+    text-decoration-color: var(--color-border);
+    text-underline-offset: 0.2em;
+  }
+
+  .email-address:hover {
+    color: var(--color-purple);
+  }
+
+  .profile-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.55rem;
+  }
+
+  .profile-links a {
+    position: relative;
+    display: inline-flex;
+    min-height: 2.2rem;
+    padding: 0.55rem 0.8rem;
+    align-items: center;
+    gap: 0.4rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-window);
+    color: var(--color-purple);
+    font-size: 0.78rem;
+    font-weight: 800;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  .profile-links a::before {
+    position: absolute;
+    inset: -0.3rem 0;
+    content: "";
+  }
+
+  .profile-links a:hover {
+    border-color: var(--color-purple);
+    background: var(--color-purple);
+    color: white;
+  }
+
+  dl {
+    display: grid;
+    gap: 0.75rem;
+    margin: 1.25rem 0 0;
+  }
+
+  dl div {
+    display: grid;
+    grid-template-columns: 7rem minmax(0, 1fr);
+    gap: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  dt {
+    color: var(--color-muted);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  dd {
+    margin: 0;
+    color: var(--color-text);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .affiliation-list {
+    display: grid;
+    gap: 0.35rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .affiliation-list a {
+    color: var(--color-purple);
+    font-weight: 650;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+  }
+
+  .affiliation-list a span {
+    margin-left: 0.25rem;
+  }
+
+  .affiliations-row {
+    grid-column: 1 / -1;
+    padding-top: 0.9rem;
+    grid-template-columns: 1fr;
+  }
+
+  .affiliations-content {
+    grid-column: 1 / -1;
+  }
+
+  .affiliations-row .affiliation-list {
+    font-size: 0.9rem;
+  }
+
+  .alumni-entry {
+    display: flex;
+    width: min(100%, 64rem);
+    margin-top: 4rem;
+    margin-inline: auto;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    border-radius: var(--radius-window);
+    background: var(--color-purple);
+    color: white;
+  }
+
+  .alumni-entry p {
+    margin: 0 0 0.5rem;
+    color: #dbc9e9;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .alumni-entry h2 {
+    color: white;
+  }
+
+  .alumni-entry span {
+    display: block;
+    max-width: 42rem;
+    margin-top: 0.75rem;
+    color: #eee5f4;
+    line-height: 1.55;
+  }
+
+  .alumni-entry > a {
+    display: inline-flex;
+    min-height: 2.75rem;
+    padding: 0.75rem 1rem;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 0.65rem;
+    border-radius: var(--radius-window);
+    background: white;
+    color: var(--color-purple);
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  @media (max-width: 44rem) {
+    article {
+      grid-template-columns: 7.5rem minmax(0, 1fr);
+      gap: 1rem;
+      padding: 0.8rem;
+    }
+
+    .person-heading {
+      display: grid;
+    }
+
+    h2 {
+      font-size: 1.45rem;
+    }
+
+    dl div {
+      grid-template-columns: 1fr;
+      gap: 0.3rem;
+    }
+
+    .alumni-entry {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+
+</style>

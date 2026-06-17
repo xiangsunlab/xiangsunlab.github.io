@@ -1,0 +1,355 @@
+---
+import { getSiteData } from "../data/pages";
+import { parseInlineMarkdown } from "../utils/markdown";
+
+interface Props {
+  lang?: "en" | "zh";
+  current?: string;
+}
+
+const { current = "home" } = Astro.props;
+const site = await getSiteData();
+const responsiveClasses = {
+  publications: "nav-publications",
+  news: "nav-news",
+  join: "nav-join",
+};
+const primaryLinks = site.navigation.map((link) => ({
+  ...link,
+  responsiveClass: responsiveClasses[link.key],
+}));
+const secondaryLinks = site.secondaryNavigation;
+
+const moreIsCurrent = secondaryLinks.some((link) => link.key === current);
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label={site.brandAria}>
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" role="img">
+          <circle cx="24" cy="24" r="7"></circle>
+          <path d="M24 4v8M24 36v8M4 24h8M36 24h8M9.9 9.9l5.7 5.7M32.4 32.4l5.7 5.7M38.1 9.9l-5.7 5.7M15.6 32.4l-5.7 5.7"></path>
+        </svg>
+      </span>
+      <span>
+        <strong>{site.brandPrimary}</strong>
+        <small>{site.brandSecondary}</small>
+      </span>
+    </a>
+
+    <nav class="desktop-nav" aria-label={site.primaryNavigationAria}>
+      {primaryLinks.map((link) => (
+        <a
+          class={link.responsiveClass}
+          href={link.href}
+          aria-current={current === link.key ? "page" : undefined}
+        >
+          {link.label}
+        </a>
+      ))}
+
+      <details class:list={["more-nav", { "is-current": moreIsCurrent }]}>
+        <summary>
+          {site.moreLabel}
+          <svg viewBox="0 0 16 16" aria-hidden="true">
+            <path d="m4 6 4 4 4-4"></path>
+          </svg>
+        </summary>
+        <div class="more-menu">
+          {primaryLinks.filter((link) => ["publications", "news", "join"].includes(link.key)).map((link) => (
+            <a class={`more-${link.key}`} href={link.href} aria-current={current === link.key ? "page" : undefined}>{link.label}</a>
+          ))}
+          {secondaryLinks.map((link) => (
+            <a href={link.href} aria-current={current === link.key ? "page" : undefined}>
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </details>
+    </nav>
+
+    <details class="mobile-nav">
+      <summary>
+        {site.mobileMenuLabel}
+        <svg viewBox="0 0 16 16" aria-hidden="true">
+          <path d="m4 6 4 4 4-4"></path>
+        </svg>
+      </summary>
+      <nav aria-label={site.mobileNavigationAria}>
+        {primaryLinks.map((link) => (
+          <a href={link.href} aria-current={current === link.key ? "page" : undefined}>
+            {link.label}
+          </a>
+        ))}
+        {secondaryLinks.map((link) => (
+          <a href={link.href} aria-current={current === link.key ? "page" : undefined}>
+            {link.label}
+          </a>
+        ))}
+      </nav>
+    </details>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid var(--color-border);
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 0.25rem 1.1rem rgba(29, 19, 38, 0.05);
+    backdrop-filter: blur(16px) saturate(150%);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
+  }
+
+  .header-inner {
+    display: flex;
+    width: min(100% - 2rem, 76rem);
+    min-height: 3.5rem;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .brand {
+    display: inline-flex;
+    flex-shrink: 0;
+    min-height: 2.75rem;
+    align-items: center;
+    gap: 0.55rem;
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+
+  .brand-mark {
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--color-purple);
+    color: white;
+  }
+
+  .brand-mark svg {
+    width: 1.2rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-width: 2.2;
+  }
+
+  .brand strong,
+  .brand small {
+    display: block;
+  }
+
+  .brand strong {
+    font-family: var(--font-display);
+    font-size: 1.12rem;
+    line-height: 1;
+  }
+
+  .brand small {
+    margin-top: 0.1rem;
+    color: var(--color-muted);
+    font-size: 0.57rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.65rem, 1.25vw, 1.15rem);
+  }
+
+  .desktop-nav > a,
+  .more-nav summary {
+    min-height: 2.75rem;
+    padding: 0.55rem 0;
+    color: var(--color-text);
+    font-size: 0.86rem;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .desktop-nav > a {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .desktop-nav > a:hover,
+  .desktop-nav > a[aria-current="page"],
+  .more-nav summary:hover,
+  .more-nav.is-current summary {
+    color: var(--color-purple);
+  }
+
+  .desktop-nav > a[aria-current="page"],
+  .more-nav.is-current > summary {
+    box-shadow: inset 0 -2px var(--color-purple);
+  }
+
+  .more-nav,
+  .mobile-nav {
+    position: relative;
+  }
+
+  .more-nav summary,
+  .mobile-nav summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .more-nav summary::-webkit-details-marker,
+  .mobile-nav summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .more-nav summary svg,
+  .mobile-nav summary svg {
+    width: 0.9rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+    transition: transform 180ms ease;
+  }
+
+  details[open] > summary svg {
+    transform: rotate(180deg);
+  }
+
+  .more-menu,
+  .mobile-nav nav {
+    position: absolute;
+    top: calc(100% + 0.45rem);
+    right: 0;
+    display: grid;
+    min-width: 12rem;
+    padding: 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-window);
+    background: white;
+    box-shadow: 0 1rem 2.5rem rgba(29, 19, 38, 0.14);
+  }
+
+  .more-menu a,
+  .mobile-nav nav a {
+    display: flex;
+    min-height: 2.75rem;
+    padding: 0.6rem 0.75rem;
+    align-items: center;
+    border-radius: var(--radius-window);
+    color: var(--color-text);
+    font-size: 0.88rem;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .more-menu a:hover,
+  .more-menu a[aria-current="page"],
+  .mobile-nav nav a:hover,
+  .mobile-nav nav a[aria-current="page"] {
+    background: var(--color-soft);
+    color: var(--color-purple);
+  }
+
+  .more-publications,
+  .more-news,
+  .more-join {
+    display: none !important;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
+  .mobile-nav summary {
+    min-height: 2.75rem;
+    padding: 0.45rem 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-window);
+    color: var(--color-ink);
+    font-size: 0.84rem;
+    font-weight: 700;
+  }
+
+  .mobile-nav nav {
+    width: min(18rem, calc(100vw - 2rem));
+  }
+
+  @media (max-width: 72rem) {
+    .nav-join {
+      display: none !important;
+    }
+
+    .more-join {
+      display: flex !important;
+    }
+  }
+
+  @media (max-width: 64rem) {
+    .nav-news {
+      display: none !important;
+    }
+
+    .more-news {
+      display: flex !important;
+    }
+  }
+
+  @media (max-width: 56rem) {
+    .nav-publications {
+      display: none !important;
+    }
+
+    .more-publications {
+      display: flex !important;
+    }
+  }
+
+  @media (max-width: 48rem) {
+    .desktop-nav {
+      display: none;
+    }
+
+    .mobile-nav {
+      display: block;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .more-nav summary svg,
+    .mobile-nav summary svg {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  const dropdowns = document.querySelectorAll<HTMLDetailsElement>(".site-header details");
+
+  document.addEventListener("click", (event) => {
+    dropdowns.forEach((dropdown) => {
+      if (!dropdown.contains(event.target as Node)) dropdown.open = false;
+    });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    dropdowns.forEach((dropdown) => {
+      dropdown.open = false;
+    });
+  });
+</script>

@@ -1,0 +1,409 @@
+---
+import InnerPage from "../components/InnerPage.astro";
+import { getPageData } from "../data/pages";
+import { parseInlineMarkdown, stripMarkdown } from "../utils/markdown";
+
+const page = await getPageData("publications");
+const publications = page.publications;
+const sortedPublications = [...publications].sort((a, b) => b.number - a.number);
+
+const resourcesFor = (publication: any) => [
+  publication.pdfUrl && { label: page.labels.pdf, href: publication.pdfUrl },
+  publication.doiUrl && { label: page.labels.doi, href: publication.doiUrl },
+  !publication.doiUrl && publication.articleUrl && { label: page.labels.article, href: publication.articleUrl },
+  publication.preprintUrl && { label: page.labels.preprint, href: publication.preprintUrl },
+  publication.newsUrl && { label: page.labels.news, href: publication.newsUrl },
+  publication.typoUrl && { label: page.labels.typo, href: publication.typoUrl },
+].filter(Boolean) as { label: string; href: string }[];
+---
+
+<InnerPage
+  title={page.title}
+  eyebrow={page.eyebrow}
+  description={page.description}
+  current="publications"
+  showDescription={false}
+>
+  <div class="profile-links" data-reveal aria-label={page.labels.profilesAria}>
+    {page.profiles.map((profile) => (
+      <a href={profile.url} target="_blank" rel="noreferrer">
+        {profile.label}<span aria-hidden="true">↗</span>
+      </a>
+    ))}
+  </div>
+
+  <ol class="publication-list" reversed start={sortedPublications[0]?.number}>
+    {sortedPublications.map((publication, index) => {
+      const resources = resourcesFor(publication);
+
+      return (
+        <li value={publication.number} data-reveal="soft" style={`--reveal-delay: ${(index % 3) * 60}ms`}>
+          <article>
+            <div class="publication-aside">
+              <span class="publication-number" aria-label={`${page.labels.publicationAria} ${publication.number}`}>
+                {String(publication.number).padStart(2, "0")}
+              </span>
+
+              <div class="publication-visual">
+                <img
+                  src={publication.image}
+                  width="900"
+                  height="600"
+                  alt={publication.imageAlt}
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div class="publication-content">
+              <p class="authors">{publication.authors}</p>
+              <h2>
+                {publication.doiUrl || publication.articleUrl ? (
+                  <a href={publication.doiUrl ?? publication.articleUrl} target="_blank" rel="noreferrer">
+                    <span set:html={parseInlineMarkdown(publication.title)}></span>
+                  </a>
+                ) : (
+                  <span set:html={parseInlineMarkdown(publication.title)}></span>
+                )}
+              </h2>
+              <div class="publication-meta">
+                <p class="citation">
+                  {publication.journalName === "Under Review" ? (
+                    <em>({page.labels.underReview})</em>
+                  ) : (
+                    <em>{publication.journalName}</em>
+                  )}
+                  {publication.volume && <> <strong>{publication.volume}</strong>, {publication.locator}</>}
+                  {!publication.volume && publication.locator && <> {publication.locator}</>}
+                </p>
+
+                {resources.length > 0 && (
+                  <div class="resource-links" aria-label={`${page.labels.resourcesAria} ${stripMarkdown(publication.title)}`}>
+                    {resources.map((resource) => (
+                      <a href={resource.href} target="_blank" rel="noreferrer">
+                        {resource.label}<span aria-hidden="true">↗</span>
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {(publication.specialIssue || publication.award) && (
+                <div class="special-issue-row">
+                  {publication.specialIssue && (
+                    publication.specialIssueUrl ? (
+                      <a
+                        class="special-issue"
+                        href={publication.specialIssueUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`${page.labels.viewSpecialIssueAria}: ${publication.specialIssue}`}
+                      >
+                        {page.labels.specialIssue} · {publication.specialIssue}<span aria-hidden="true">↗</span>
+                      </a>
+                    ) : (
+                      <p class="special-issue">{page.labels.specialIssue} · {publication.specialIssue}</p>
+                    )
+                  )}
+                  {publication.award && <p class="special-issue publication-award">{page.labels.award} · {publication.award}</p>}
+                </div>
+              )}
+            </div>
+          </article>
+        </li>
+      );
+    })}
+  </ol>
+</InnerPage>
+
+<style>
+  .profile-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+  }
+
+  .profile-links a {
+    display: inline-flex;
+    min-height: 2.35rem;
+    padding: 0.55rem 0.9rem;
+    align-items: center;
+    gap: 0.4rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-window);
+    color: var(--color-purple);
+    font-size: 0.85rem;
+    font-weight: 800;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  .profile-links a:hover {
+    border-color: var(--color-purple);
+    background: var(--color-purple);
+    color: white;
+  }
+
+  .publication-list {
+    display: grid;
+    gap: 0.75rem;
+    margin: 1.25rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .publication-list li {
+    margin: 0;
+  }
+
+  article {
+    display: grid;
+    grid-template-columns: 16.25rem minmax(0, 1fr);
+    gap: 10px;
+    padding: 1rem; 
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-window);
+    background: var(--color-white);
+    min-height: 9.8rem;
+  }
+
+  .publication-aside {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2rem minmax(0, 1fr);
+    align-content: start;
+    align-items: start;
+    justify-items: start;
+    gap: 0.5rem;
+  }
+
+  .publication-visual {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 2.5rem;
+    aspect-ratio: 3 / 2;
+    margin: 0;
+    overflow: hidden;
+    border-radius: var(--radius-window);
+    background: transparent;
+    transform: translateY(-50%);
+  }
+
+  .publication-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .publication-number {
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    margin-top: calc((1.5em - 2rem) / 2);
+    place-items: center;
+    border-radius: 999px;
+    background: var(--color-purple);
+    color: white;
+    font-size: clamp(0.94rem, 1.2vw, 1rem);
+    font-weight: 850;
+    letter-spacing: 0.05em;
+  }
+
+  .publication-content {
+    display: flex;
+    min-width: 0;
+    padding: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .special-issue {
+    position: relative;
+    display: inline-flex;
+    align-self: flex-start;
+    margin: 0;
+    padding: 0.3rem 0.65rem;
+    align-items: center;
+    gap: 0.4rem;
+    border-radius: var(--radius-window);
+    background: #efe6f7;
+    color: var(--color-purple-dark);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    line-height: 1.4;
+    text-decoration: none;
+  }
+
+  .special-issue-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    min-height: 0;
+    margin-top: 0.45rem;
+  }
+
+  .special-issue.publication-award {
+    background: #efe6f7;
+  }
+
+  a.special-issue {
+    transition:
+      background 180ms ease,
+      color 180ms ease;
+  }
+
+  a.special-issue::before {
+    position: absolute;
+    inset: -0.35rem 0;
+    content: "";
+  }
+
+  a.special-issue:hover {
+    background: var(--color-purple);
+    color: white;
+  }
+
+  a.special-issue:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--color-purple) 35%, transparent);
+    outline-offset: 3px;
+  }
+
+  .authors {
+    margin: 0;
+    color: var(--color-purple);
+    font-size: clamp(0.94rem, 1.2vw, 1rem);
+    font-weight: 750;
+    line-height: 1.5;
+  }
+
+  h2 {
+    width: 100%;
+    max-width: none;
+    margin: 0.3rem 0 0.45rem;
+    font-family: var(--font-display);
+    font-size: clamp(1.08rem, 1.4vw, 1.25rem);
+    font-weight: 600;
+    line-height: 1.18;
+  }
+
+  h2 a {
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+
+  h2 a:hover {
+    color: var(--color-purple);
+  }
+
+  .citation {
+    margin: 0;
+    flex: 1 1 12rem;
+    color: var(--color-ink);
+    font-size: clamp(0.94rem, 1.2vw, 1rem);
+    font-weight: 550;
+    line-height: 1.5;
+  }
+
+  .publication-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.8rem;
+  }
+
+  .resource-links {
+    display: flex;
+    flex: 0 1 auto;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+  }
+
+  .resource-links a {
+    position: relative;
+    display: inline-flex;
+    min-height: 2rem;
+    padding: 0.35rem 0.75rem;
+    align-items: center;
+    gap: 0.45rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-window);
+    color: var(--color-purple);
+    font-size: 0.76rem;
+    font-weight: 800;
+    line-height: 1;
+    text-decoration: none;
+    transition:
+      border-color 180ms ease,
+      background 180ms ease,
+      color 180ms ease;
+  }
+
+  .resource-links a::before {
+    position: absolute;
+    inset: -0.35rem 0;
+    content: "";
+  }
+
+  .resource-links a:hover {
+    border-color: var(--color-purple);
+    background: var(--color-purple);
+    color: white;
+  }
+
+  @media (max-width: 44rem) {
+    article {
+      grid-template-columns: 9.5rem minmax(0, 1fr);
+      gap: 10px;
+    }
+
+    .publication-aside {
+      grid-column: 1;
+    }
+
+    .publication-visual {
+      aspect-ratio: 3 / 2;
+    }
+
+    .publication-content {
+      grid-column: 2;
+      padding: 0;
+    }
+
+    .publication-visual img {
+      min-height: 100%;
+    }
+  }
+
+  @media (max-width: 40rem) {
+    article {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    .publication-aside {
+      grid-column: 1;
+      grid-template-columns: 2rem minmax(0, 1fr);
+      width: 100%;
+      gap: 0.5rem;
+    }
+
+    .publication-visual {
+      position: relative;
+      top: auto;
+      right: auto;
+      left: auto;
+      width: min(66vw, 22rem);
+      margin-top: calc((1.5em - 2rem) / 2);
+      transform: none;
+    }
+
+    .publication-content {
+      grid-column: 1;
+      padding: 0;
+    }
+  }
+</style>

@@ -1,0 +1,174 @@
+---
+import { getNewsPageData } from "../data/news";
+import { parseFullMarkdown } from "../utils/markdown";
+import { parseInlineMarkdown } from "../utils/markdown";
+
+interface Props {
+  items: any[];
+}
+
+const { items } = Astro.props;
+const page = await getNewsPageData();
+
+---
+
+<div class="news-list">
+  {items.map((item) => (
+    <article id={item.id} class="news-item" data-reveal>
+      <time datetime={item.datetime}>{item.date}</time>
+      <div class="news-content">
+        <h2>{item.title}</h2>
+
+        {(item.content || item.contentHtml) && (
+          <div class="news-body" set:html={parseFullMarkdown(item.content || item.contentHtml)} />
+        )}
+
+        {item.url && (
+          <a class="read-more" href={item.url} target="_blank" rel="noreferrer">
+            {item.linkLabel ?? page.labels.readMore}
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M5 11 11 5M6 5h5v5"></path>
+            </svg>
+          </a>
+        )}
+      </div>
+
+      {item.image && (
+        <img
+          src={item.image}
+          alt={item.imageAlt ?? ""}
+          width="1253"
+          height="750"
+          loading="lazy"
+          style={`--news-image-width: ${item.imageWidth}%`}
+        />
+      )}
+    </article>
+  ))}
+</div>
+
+<style>
+  .news-list {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .news-item {
+    display: grid;
+    gap: 0;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border: 1px solid rgba(76, 46, 91, 0.08);
+    border-radius: var(--radius-window);
+    background: #f7f3f8;
+    scroll-margin-top: 6rem;
+  }
+
+  .news-item:nth-child(even) {
+    background: #f1f5f5;
+  }
+
+  time {
+    color: var(--color-ink);
+    font-size: clamp(1.05rem, 1.7vw, 1.2rem);
+    font-weight: 800;
+    line-height: 1.35;
+  }
+
+  .news-content {
+    min-width: 0;
+    margin-top: 0.8rem;
+  }
+
+  :global(.news-body) {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  h2 {
+    width: 100%;
+    margin: 0;
+    overflow-wrap: anywhere;
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-size: clamp(1.55rem, 3vw, 2.35rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+  }
+
+  :global(.news-body p) {
+    width: 100%;
+    margin: 0.85rem 0 0;
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
+
+  :global(.news-body p + p) {
+    margin-top: 0.7rem;
+  }
+
+  :global(.news-body ul),
+  :global(.news-body ol) {
+    margin: 0.85rem 0 0;
+    padding-left: 1.25rem;
+    color: var(--color-muted);
+  }
+
+  :global(.news-body li + li) {
+    margin-top: 0.35rem;
+  }
+
+  :global(.news-body a) {
+    color: var(--color-purple);
+    overflow-wrap: anywhere;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.16em;
+  }
+
+  .read-more {
+    display: inline-flex;
+    min-height: 2.75rem;
+    margin-top: 1rem;
+    padding: 0.5rem 0;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--color-purple);
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .read-more svg {
+    width: 1rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+    transition: transform 180ms ease;
+  }
+
+  .read-more:hover svg {
+    transform: translate(0.15rem, -0.15rem);
+  }
+
+  img {
+    width: min(100%, var(--news-image-width));
+    height: auto;
+    margin-top: 1.4rem;
+    border-radius: var(--radius-window);
+    object-fit: contain;
+  }
+
+  @media (max-width: 38rem) {
+    h2 {
+      max-width: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .read-more svg {
+      transition: none;
+    }
+  }
+</style>

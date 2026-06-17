@@ -1,0 +1,114 @@
+---
+import InnerPage from "../components/InnerPage.astro";
+import { getPageData } from "../data/pages";
+import { parseInlineMarkdown } from "../utils/markdown";
+import { parseFullMarkdown } from "../utils/markdown";
+
+const page = await getPageData("postdoc-opening");
+---
+
+<InnerPage title={page.title} eyebrow={page.eyebrow} description={page.description} current="join" wideHeading={true}>
+  <div class="article-content" data-reveal>
+    <h3>{page.mainHeading}</h3>
+
+    <h4>{page.descriptionSection.title}</h4>
+    {page.descriptionSection.paragraphs.map((paragraph) => (
+      <p set:html={parseInlineMarkdown(paragraph)} />
+    ))}
+
+    <h4>{page.qualificationsSection.title}</h4>
+    <ul>
+      {page.qualificationsSection.items.map((item) => (
+        <li set:html={parseInlineMarkdown(item)}></li>
+      ))}
+    </ul>
+
+    <h4>{page.applicationSection.title}</h4>
+    <p set:html={parseInlineMarkdown(page.applicationSection.intro)}></p>
+    <ul>
+      {page.applicationSection.items.map((item) => (
+        <li set:html={parseInlineMarkdown(item)}></li>
+      ))}
+    </ul>
+    <p set:html={parseInlineMarkdown(page.applicationSection.outro)}></p>
+
+    <hr class="divider" />
+
+    <h4>{page.aboutSection.title}</h4>
+    {page.aboutSection.paragraphs.map((paragraph) => (
+      <p set:html={parseInlineMarkdown(paragraph)} />
+    ))}
+
+    <p class="eoe-text">
+      <small set:html={parseInlineMarkdown(page.footerNote)}></small>
+    </p>
+  </div>
+</InnerPage>
+
+<style>
+  .article-content {
+    max-width: 65rem; 
+    margin-inline: auto;
+    color: var(--color-text);
+  }
+
+  .article-content h3 {
+    color: var(--color-purple);
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    margin: 2.5rem 0 1.25rem;
+    font-weight: 700;
+  }
+
+  .article-content h4 {
+    color: var(--color-ink);
+    font-size: clamp(1.15rem, 2vw, 1.35rem);
+    margin: 2rem 0 1rem;
+    font-weight: 650;
+  }
+
+  .article-content p {
+    margin-bottom: 1.25rem;
+    line-height: 1.75;
+    font-size: 1.05rem;
+  }
+
+  .article-content ul {
+    margin: 0 0 1.5rem 0;
+    padding-left: 1.5rem;
+    line-height: 1.75;
+    font-size: 1.05rem;
+  }
+
+  .article-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .article-content :global(a) {
+    color: var(--color-purple);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+
+  .article-content :global(a:hover) {
+    color: var(--color-ink);
+  }
+
+  .article-content :global(strong) {
+    color: var(--color-ink);
+    font-weight: 700;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: 3rem 0;
+  }
+
+  .eoe-text {
+    margin-top: 2rem;
+    color: var(--color-muted);
+  }
+</style>

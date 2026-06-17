@@ -1,0 +1,47 @@
+---
+import InnerPage from "../../components/InnerPage.astro";
+import NewsList from "../../components/NewsList.astro";
+import NewsPagination from "../../components/NewsPagination.astro";
+import { getNewsItems, getNewsPageData, NEWS_PAGE_SIZE } from "../../data/news";
+
+export async function getStaticPaths() {
+  const newsItems = await getNewsItems();
+  const totalPages = Math.ceil(newsItems.length / NEWS_PAGE_SIZE);
+
+  return Array.from({ length: Math.max(0, totalPages - 1) }, (_, index) => {
+    const currentPage = index + 2;
+
+    return {
+      params: { page: String(currentPage) },
+      props: {
+        currentPage,
+        items: newsItems.slice(
+          (currentPage - 1) * NEWS_PAGE_SIZE,
+          currentPage * NEWS_PAGE_SIZE,
+        ),
+        totalPages,
+      },
+    };
+  });
+}
+
+interface Props {
+  currentPage: number;
+  items: any[];
+  totalPages: number;
+}
+
+const { currentPage, items, totalPages } = Astro.props;
+const page = await getNewsPageData();
+---
+
+<InnerPage
+  title={page.title}
+  eyebrow={page.eyebrow}
+  description={page.description}
+  current="news"
+  showDescription={false}
+>
+  <NewsList items={items} />
+  <NewsPagination currentPage={currentPage} totalPages={totalPages} />
+</InnerPage>

@@ -1,0 +1,334 @@
+---
+import InnerPage from "../components/InnerPage.astro";
+import { getPageData } from "../data/pages";
+import { parseInlineMarkdown } from "../utils/markdown";
+
+const page = await getPageData("research");
+---
+
+<InnerPage
+  title={page.title}
+  eyebrow={page.eyebrow}
+  description={page.description}
+  current="research"
+  wideHeading
+>
+  <section class="research-overview" data-reveal>
+    <h2>{page.researchAreasLabel}</h2>
+    <div class="research-tags">
+      {page.researchAreas.map((area) => <span>{area}</span>)}
+    </div>
+  </section>
+
+  <h2 class="topics-heading" data-reveal>{page.researchTopicsLabel}</h2>
+
+  <div class="research-list">
+    {page.areas.map((area) => (
+      <article class="research-card" data-reveal>
+        <div class="research-image">
+          <span class="research-number" aria-hidden="true">{area.number}</span>
+          <img
+            src={area.image}
+            alt={area.imageAlt}
+            width="1024"
+            height="753"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="research-copy">
+          <h2>{area.title}</h2>
+          <p set:html={parseInlineMarkdown(area.description)}></p>
+
+          <details>
+            <summary>
+              {page.relatedPublicationsLabel}
+              <svg viewBox="0 0 20 20" aria-hidden="true">
+                <path d="m5 7.5 5 5 5-5"></path>
+              </svg>
+            </summary>
+            <ul>
+              {area.publications.map((publication) => (
+                <li>
+                  <a class="publication-title" href={publication.url} target="_blank" rel="noreferrer">
+                    <span set:html={parseInlineMarkdown(publication.title)}></span>
+                  </a>
+                  <p class="publication-authors">{publication.authors}</p>
+                  <p class="publication-source">
+                    <em>{publication.journal}</em> <strong>{publication.volume}</strong>, {publication.details}.
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </details>
+        </div>
+      </article>
+    ))}
+  </div>
+
+  <aside class="books-callout" data-reveal>
+    <div>
+      <h2>{page.booksTitle}</h2>
+      <p set:html={parseInlineMarkdown(page.booksDescription)}></p>
+    </div>
+    <a href={page.booksHref}>
+      {page.booksLinkLabel}
+      <span aria-hidden="true">→</span>
+    </a>
+  </aside>
+</InnerPage>
+
+<style>
+  .research-overview {
+    margin-bottom: 3rem;
+  }
+
+  .research-overview h2,
+  .topics-heading {
+    margin: 0 0 1.25rem;
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 500;
+    line-height: 1.1;
+  }
+
+  .research-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+  }
+
+  .research-tags span {
+    display: inline-flex;
+    min-height: 2.5rem;
+    padding: 0.55rem 1rem;
+    align-items: center;
+    border: 1px solid rgba(75, 25, 121, 0.15);
+    border-radius: var(--radius-window);
+    background: #f7f3f8;
+    color: var(--color-purple);
+    font-size: 0.92rem;
+    font-weight: 750;
+    line-height: 1.25;
+  }
+
+  .topics-heading {
+    margin-bottom: 1.5rem;
+  }
+
+  .research-list {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .research-card {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    min-height: 24rem;
+    overflow: hidden;
+    border: 1px solid rgba(76, 46, 91, 0.09);
+    border-radius: var(--radius-window);
+    background: #f7f3f8;
+  }
+
+  .research-card:nth-child(even) {
+    background: #f1f5f5;
+  }
+
+  .research-image {
+    position: relative;
+    display: grid;
+    min-width: 0;
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    place-items: center;
+    background: rgba(255, 255, 255, 1.0);
+  }
+
+  .research-image img {
+    width: 100%;
+    max-height: 22rem;
+    object-fit: contain;
+  }
+
+  .research-number {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1;
+    display: grid;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 999px;
+    background: var(--color-purple);
+    color: white;
+    font-size: 1rem;
+    font-weight: 850;
+    place-items: center;
+  }
+
+  .research-copy {
+    min-width: 0;
+    padding: clamp(2rem, 4vw, 3.25rem);
+    align-self: center;
+  }
+
+  h2 {
+    margin: 0;
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3vw, 2.65rem);
+    font-weight: 500;
+    line-height: 1.08;
+  }
+
+  .research-copy > p {
+    max-width: 46rem;
+    margin: 1.25rem 0 0;
+    color: var(--color-text);
+    font-size: 1.04rem;
+    line-height: 1.72;
+  }
+
+  details {
+    margin-top: 1.5rem;
+    border-top: 1px solid rgba(76, 46, 91, 0.14);
+  }
+
+  summary {
+    display: flex;
+    min-height: 3.25rem;
+    padding: 0.75rem 0;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    color: var(--color-purple);
+    cursor: pointer;
+    font-weight: 800;
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary svg {
+    width: 1.1rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+    transition: transform 180ms ease;
+  }
+
+  details[open] summary svg {
+    transform: rotate(180deg);
+  }
+
+  ul {
+    display: grid;
+    margin: 0;
+    padding: 0 0 1.25rem 1.25rem;
+    gap: 0.75rem;
+  }
+
+  li {
+    padding-left: 0.25rem;
+    color: var(--color-muted);
+  }
+
+  .publication-title {
+    color: var(--color-ink);
+    font-size: 0.96rem;
+    font-weight: 800;
+    line-height: 1.5;
+    text-decoration-color: rgba(75, 25, 121, 0.28);
+    text-underline-offset: 0.2rem;
+    transition: color 180ms ease, text-decoration-color 180ms ease;
+  }
+
+  .publication-title:hover {
+    color: var(--color-purple);
+    text-decoration-color: currentColor;
+  }
+
+  .publication-authors,
+  .publication-source {
+    margin: 0.3rem 0 0;
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .publication-source {
+    margin-top: 0.08rem;
+  }
+
+  .publication-source strong {
+    color: var(--color-text);
+  }
+
+  .books-callout {
+    display: flex;
+    margin-top: 1.5rem;
+    padding: clamp(1.75rem, 4vw, 3rem);
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    border-radius: var(--radius-window);
+    background: var(--color-purple);
+    color: white;
+  }
+
+  .books-callout h2 {
+    color: white;
+  }
+
+  .books-callout p {
+    max-width: 48rem;
+    margin: 0.75rem 0 0;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .books-callout a {
+    display: inline-flex;
+    min-height: 2.75rem;
+    padding: 0.65rem 1rem;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 0.55rem;
+    border-radius: var(--radius-window);
+    background: white;
+    color: var(--color-purple);
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  @media (max-width: 48rem) {
+    .research-card {
+      grid-template-columns: 1fr;
+      min-height: 0;
+    }
+
+    .research-image {
+      min-height: 17rem;
+    }
+
+    .research-copy {
+      padding: 1.75rem;
+    }
+
+    .books-callout {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    summary svg,
+    .publication-title {
+      transition: none;
+    }
+  }
+</style>

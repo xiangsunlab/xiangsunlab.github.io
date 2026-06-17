@@ -1,0 +1,88 @@
+---
+import InnerPage from "../components/InnerPage.astro";
+import { getPageData } from "../data/pages";
+import { parseInlineMarkdown } from "../utils/markdown";
+
+const page = await getPageData("contact");
+---
+
+<InnerPage title={page.title} eyebrow={page.eyebrow} description={page.description} current="contact">
+  <div class="office-grid">
+    {page.offices.map((office) => (
+      <article class="office-card">
+        <h2>{office.title}</h2>
+        <a href={`tel:${office.telephone.replaceAll(" ", "")}`}>Tel: {office.telephone}</a>
+        <address>
+          {office.lines.map((line) => <span set:html={parseInlineMarkdown(line)}></span>)}
+        </address>
+      </article>
+    ))}
+
+    <article class="office-card group-office">
+      <h2>{page.groupOffice.title}</h2>
+      {page.groupOffice.telephone && (
+        <a href={`tel:${page.groupOffice.telephone.replaceAll(" ", "")}`}>
+          Tel: {page.groupOffice.telephone}
+        </a>
+      )}
+      <address>
+        {page.groupOffice.lines.map((line) => <span set:html={parseInlineMarkdown(line)}></span>)}
+      </address>
+    </article>
+  </div>
+</InnerPage>
+
+<style>
+  .office-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .office-card {
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-window);
+    background: #f7f3f8;
+  }
+
+  .office-card:nth-child(even) {
+    background: #f1f5f5;
+  }
+
+  .group-office {
+    grid-column: 1 / -1;
+  }
+
+  h2 {
+    margin: 0 0 1rem;
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-size: clamp(1.55rem, 2.5vw, 2rem);
+    line-height: 1.15;
+  }
+
+  address {
+    display: grid;
+    gap: 0.35rem;
+    margin-top: 1rem;
+    color: var(--color-muted);
+    font-style: normal;
+    line-height: 1.55;
+  }
+
+  a {
+    color: var(--color-purple);
+    font-weight: 800;
+  }
+
+  @media (max-width: 46rem) {
+    .office-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .group-office {
+      grid-column: auto;
+    }
+  }
+</style>

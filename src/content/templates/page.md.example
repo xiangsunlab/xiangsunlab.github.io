@@ -1,0 +1,17 @@
+---
+title: "New Page"
+eyebrow: "Section label"
+description: "A concise description used on the page and in metadata."
+heading: "Main content heading"
+body: "Main page text."
+action: {
+  "label": "Action label",
+  "href": "/destination/"
+}
+image: "/web-pics/example.jpg"
+imageAlt: "A meaningful description of the image"
+---
+
+Add any page-specific structured lists to the frontmatter. The corresponding
+Astro route must contain layout and styling only; all user-facing text belongs
+in this Markdown file.

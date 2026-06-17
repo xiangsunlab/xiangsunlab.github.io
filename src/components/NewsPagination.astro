@@ -1,0 +1,160 @@
+---
+import { getNewsPageData } from "../data/news";
+
+interface Props {
+  currentPage: number;
+  totalPages: number;
+}
+
+const { currentPage, totalPages } = Astro.props;
+const pageData = await getNewsPageData();
+const pageUrl = (page: number) => page === 1 ? "/news/" : `/news/${page}/`;
+
+type PaginationItem = number | "ellipsis";
+
+const getPaginationItems = (): PaginationItem[] => {
+  if (totalPages <= 5) {
+    return Array.from({ length: totalPages }, (_, index) => index + 1);
+  }
+
+  if (currentPage <= 3) {
+    return [1, 2, 3, "ellipsis", totalPages];
+  }
+
+  if (currentPage >= totalPages - 2) {
+    return [1, "ellipsis", totalPages - 2, totalPages - 1, totalPages];
+  }
+
+  return [
+    1,
+    "ellipsis",
+    currentPage - 1,
+    currentPage,
+    currentPage + 1,
+    "ellipsis",
+    totalPages,
+  ];
+};
+
+const paginationItems = getPaginationItems();
+---
+
+{totalPages > 1 && (
+  <nav class="pagination" aria-label={pageData.labels.pagesAria}>
+    {currentPage > 1 && (
+      <a class="page-link page-direction" href={pageUrl(currentPage - 1)}>
+        <span aria-hidden="true">←</span>
+        {pageData.labels.previous}
+      </a>
+    )}
+
+    <div class="page-numbers">
+      {paginationItems.map((item) => (
+        item === "ellipsis" ? (
+          <span class="ellipsis" aria-hidden="true">…</span>
+        ) : item === currentPage ? (
+          <span class="page-link current" aria-current="page">{item}</span>
+        ) : (
+          <a class="page-link" href={pageUrl(item)} aria-label={`${pageData.labels.pageAria} ${item}`}>{item}</a>
+        )
+      ))}
+    </div>
+
+    {currentPage < totalPages && (
+      <a class="page-link page-direction" href={pageUrl(currentPage + 1)}>
+        {pageData.labels.next}
+        <span aria-hidden="true">→</span>
+      </a>
+    )}
+  </nav>
+)}
+
+<style>
+  .pagination {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .page-numbers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .ellipsis {
+    display: inline-flex;
+    width: 2.75rem;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-muted);
+    font-size: 1.25rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .page-link {
+    display: inline-flex;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    padding: 0.5rem 0.8rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(76, 46, 91, 0.18);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--color-purple);
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-decoration: none;
+    transition:
+      border-color 180ms ease,
+      background-color 180ms ease;
+  }
+
+  a.page-link:hover {
+    border-color: var(--color-purple);
+    background: #f7f3f8;
+  }
+
+  .page-direction:first-child {
+    justify-self: start;
+  }
+
+  .page-direction:last-child {
+    justify-self: end;
+  }
+
+  .current {
+    border-color: var(--color-purple);
+    background: var(--color-purple);
+    color: #fff;
+  }
+
+  @media (max-width: 38rem) {
+    .pagination {
+      gap: 0.75rem;
+    }
+
+    .page-numbers {
+      width: 100%;
+      order: -1;
+    }
+
+    .page-direction {
+      flex: 1;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .page-link {
+      transition: none;
+    }
+  }
+</style>
