@@ -9,6 +9,11 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "astro": "^6.0.0"
+    "@fontsource/inter": "^5.2.8"
+  },
+  "devDependencies": {
+    "astro": "^6.4.7",
+    "esbuild": "^0.28.1",
+    "vite": "^8.0.16"
   }
 }
