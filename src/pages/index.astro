@@ -17,7 +17,7 @@ const latestPublications = publicationsPage.publications
   .sort((a, b) => b.number - a.number)
   .slice(0, 4);
 
-const latestNews = newsItems.slice(0, 10);
+const latestNews = newsItems.filter((item) => !item.draft).slice(0, 10);
 ---
 
 <BaseLayout title={page.browserTitle} description={page.description}>

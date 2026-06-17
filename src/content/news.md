@@ -13,7 +13,7 @@ items: [
   {
     "title": "Hao’s paper on memory time estimation in GQME and TTM is accepted by JCP!",
     "date": "2026-05-21",
-    "content": "Congrats, Hao’s paper on memory time estimation in GQME and TTM has been accepted by JCP!\n\n- Hao Zeng, Xiang Sun\\*, [Estimating Memory Time within the Frameworks of Generalized Quantum Master Equation and Transfer Tensor Methods](https://doi.org/10.1063/5.0325277), *J. Chem. Phys.* (DOI: 10.1063/5.0325277)"
+    "content": "Congrats, Hao’s paper on memory time estimation in GQME and TTM has been accepted by JCP!\n\n- Hao Zeng, Xiang Sun\\*, [Estimating Memory Time within the Frameworks of Generalized Quantum Master Equation and Transfer Tensor Methods](https://doi.org/10.1063/5.0325277), *J. Chem. Phys.* (DOI: 10.1063/5.0325277)",
   },
   {
     "title": "Xiang received tenure and promotion to Associate Professor!",

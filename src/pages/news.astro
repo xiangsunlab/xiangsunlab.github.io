@@ -6,7 +6,7 @@ import { getNewsItems, getNewsPageData, NEWS_PAGE_SIZE } from "../data/news";
 import { parseInlineMarkdown } from "../utils/markdown";
 
 const page = await getNewsPageData();
-const newsItems = await getNewsItems();
+const newsItems = (await getNewsItems()).filter((item) => !item.draft);
 const latestNews = newsItems.slice(0, NEWS_PAGE_SIZE);
 const totalPages = Math.ceil(newsItems.length / NEWS_PAGE_SIZE);
 ---
