@@ -122,7 +122,7 @@ groups: [
         "education": "New York University Shanghai",
         "orcidUrl": "",
         "project": "Energy transfer in photosynthetic systems and machine learning of quantum dynamics",
-        "image": ""
+        "image": "/web-pics/people-haoyuan-fan.jpg"
       },
       {
         "name": "Yanxi Chen",
@@ -130,7 +130,7 @@ groups: [
         "education": "New York University Shanghai",
         "orcidUrl": "",
         "project": "Charge transfer in condensed-phase systems",
-        "image": ""
+        "image": "/web-pics/people-yanxi-chen.jpg"
       },
       {
         "name": "Zhiqian Xu",
@@ -138,7 +138,7 @@ groups: [
         "education": "New York University Shanghai",
         "orcidUrl": "",
         "project": "Ultrafast dynamics and spectroscopy of liquids",
-        "image": ""
+        "image": "/web-pics/people-zhiqian-xu.jpg"
       }
     ]
   },
