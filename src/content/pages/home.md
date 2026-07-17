@@ -21,6 +21,6 @@ allNewsLabel: "View all news "
 allNewsHref: "/news/"
 joinEyebrow: "Work with us"
 joinTitle: "New questions need new perspectives."
-joinDescription: "We welcome motivated students and researchers from chemistry, physics, applied mathematics, and computer science."
+joinDescription: "We welcome motivated students and researchers from physics, chemistry, applied mathematics, and computer science."
 joinAction: { "label": "View opportunities", "href": "/join/" }
 ---

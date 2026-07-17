@@ -20,7 +20,7 @@ groups: [
         "cvUrl": "/cv/",
         "affiliations": [
           {
-            "label": "Associate Professor, NYU Shanghai"
+            "label": "Associate Professor of Chemistry and Physics, NYU Shanghai"
           },
           {
             "label": "Global Network Associate Professor, New York University"
@@ -37,8 +37,8 @@ groups: [
           },
           {
             "prefix": "Adjunct Professor, ",
-            "label": "State Key Laboratory of Precision Spectroscopy, ECNU",
-            "url": "http://www.lps.ecnu.edu.cn/35940/list.htm"
+            "label": "School of Physics, East China Normal University",
+            "url": "https://phy.ecnu.edu.cn/main.htm"
           }
         ],
         "orcidUrl": "https://orcid.org/0000-0002-2846-8532",

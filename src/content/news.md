@@ -11,14 +11,59 @@ labels: {
 }
 items: [
   {
-    "title": "Hao’s paper on memory time estimation in GQME and TTM is accepted by JCP!",
-    "date": "2026-05-21",
-    "content": "Congrats, Hao’s paper on memory time estimation in GQME and TTM has been accepted by JCP!\n\n- Hao Zeng, Xiang Sun\\*, [Estimating Memory Time within the Frameworks of Generalized Quantum Master Equation and Transfer Tensor Methods](https://doi.org/10.1063/5.0325277), *J. Chem. Phys.* (DOI: 10.1063/5.0325277)",
+    "title": "Xiang gives invited talk in Path Integral Quantum Mechanics, CECAM Flagship School",
+    "date": "2026-07-21",
+    "content": "Xiang gives a talk on Semiclassical Methods for Photoinduced Charge Transfer in the Path Integral Quantum Mechanics in the Era of Machine Learning (PIQM 2026), CECAM Flagship School, July 19-23, 2026 at Shanghai, China.",
   },
   {
-    "title": "Xiang received tenure and promotion to Associate Professor!",
+    "title": "Welcome Jiarui to our group!",
+    "date": "2026-07-15",
+    "content": "Please join me in welcoming SRPMS summer intern Jiarui to our group! Hope to work together and make scientific progress!"
+  },
+  {
+    "title": "Hao’s paper on memory time estimation in GQME and TTM is accepted by JCP!",
+    "date": "2026-05-21",
+    "content": "Congrats, Hao’s paper on memory time estimation in GQME and TTM has been accepted by JCP!\n\n- Hao Zeng, Xiang Sun, [Estimating Memory Time within the Frameworks of Generalized Quantum Master Equation and Transfer Tensor Methods](https://doi.org/10.1063/5.0325277), *J. Chem. Phys.* (DOI: 10.1063/5.0325277)",
+  },
+  {
+    "title": "Xiang received tenure and promotion to Associate Professor of Chemistry and Physics!",
     "date": "2026-04-15",
-    "content": "Xiang received tenure and promotion to Associate Professor!"
+    "content": "Xiang received tenure and promotion to Associate Professor of Chemistry and Physics!"
+  },
+  {
+    "title": "Xiang gives invited talk in Frontier Symposium on AI‑Driven Spectroscopy and Dynamics",
+    "date": "2026-03-27",
+    "content": "Xiang gives a talk on Atomistic Simulation of Ultrafast Spectroscopy in Liquid Solution in the Frontier Symposium on AI‑Driven Spectroscopy and Dynamics, organized by Fudan University, July 27-28, 2026 at Shanghai, China.",
+  },
+  {
+    "title": "Our paper on correlated bath effect is accepted by JPCL!",
+    "date": "2026-03-16",
+    "content": "Congrats, Xiang and Zengkui's paper on correlated bath effects in charge transfer has been accepted by JPCL! This is part of the special issue “Future Leaders in Physical Chemistry”.\n\n- Xiang Sun, Zengkui Liu, [Molecular Origin of Correlated Bath Effects in Photoinduced Charge Transfer Dynamics in Polar Solvents](https://doi.org/10.1021/acs.jpclett.5c04090), *J. Phys. Chem. Lett.* (DOI: 10.1021/acs.jpclett.5c04090)",
+  },
+  {
+    "title": "Our review paper on IMT is accepted by WIREs Comput Mol Sci!",
+    "date": "2026-03-10",
+    "content": "Our invited review paper on Instantaneous Marcus Theory (IMT) for photoinduced charge transfer has been accepted by Wiley Interdisciplinary Reviews in Computational Molecular Science!\n\n- Xiang Sun,  [Instantaneous Marcus Theory for Photoinduced Charge Transfer in Condensed Phase](https://doi.org/10.1002/wcms.70069), *WIREs Comput. Mol. Sci.* (DOI: 10.1002/wcms.70069)",
+  },
+  {
+    "title": "Welcome Haoyuan, Yanxi, and Zhiqian to our group!",
+    "date": "2026-02-10",
+    "content": "Please join me in welcoming undergraduate researchers Haoyuan, Yanxi, and Zhiqian to our group! Hope to work together and make scientific progress!"
+  },
+  {
+    "title": "Xiang gives invited talk in Ultrafast Spectroscopy Meets AI Conference at Hong Kong",
+    "date": "2025-12-06",
+    "content": "Xiang gives a talk on Photoinduced Charge Transfer Dynamics in the Condensed Phase in the **When Ultrafast Spectroscopy Meets AI: Challenges and Opportunities** Conference, organized by HKUST, December 5-7, 2025 at Hong Kong, China."
+  },
+  {
+    "title": "Our review paper on MSH model is accepted by JCTC!",
+    "date": "2025-12-09",
+    "content": "Our invited review paper on the multistate harmonic (MSH) model for nonadiabatic dynamics in condensed phase has been accepted by JCTC!\n\n- Zengkui Liu, Hao Zeng, Xiang Sun, [Consistent and Generalizable Effective Model Hamiltonian Framework for Studying Nonadiabatic Dynamics in the Condensed Phase](https://doi.org/10.1021/acs.jctc.5c01586), *J. Chem. Theory Comput. * (DOI: 10.1021/acs.jctc.5c01586)",
+  },
+  {
+    "title": "Xiang gives invited talk at 13th Conference on Statistical Mechanics of Complex Systems",
+    "date": "2025-11-08",
+    "content": "Xiang gives an invited talk at the 13th Conference on Computational Statistical Mechanics of Complex Systems, organized by Shenzhen Bay Lab, at Shenzhen, Guangdong, Nov 7-9, 2025."
   },
   {
     "title": "Congrats to Dr. Zengkui Liu on successful dissertation defense!",
@@ -27,6 +72,11 @@ items: [
     "image": "/news-pics/zengkui-defense.jpg",
     "imageAlt": "Zengkui defense poster",
     "imageWidth": 60,
+  },
+  {
+    "title": "Xiang gives invited talk at 16th International Conference on Computational Nanoscience and New Energy Materials (CNNEM2025)",
+    "date": "2025-09-07",
+    "content": "Xiang gives an invited talk at the 16th International Conference on Computational Nanoscience and New Energy Materials (CNNEM2025), at Changchun, Jilin, Sep 5-9, 2025."
   },
   {
     "title": "We received Young Scientists Program (Category B) from NSFC!",
@@ -39,7 +89,7 @@ items: [
     "content": "Please join me in welcoming Jialong, Zihan, and Shurun to our group! Hope to work together and make scientific progress!"
   },
   {
-    "title": "Hao and Yitian’s invited paper on ML for wavefunction dynamics is accepted by Mol. Phys.!",
+    "title": "Hao and Yitian’s invited paper on ML for wavefunction dynamics is accepted by Mol Phys!",
     "date": "2025-05-08",
     "content": "Hao and Yitian’s contribution to the invited special issue for **Zlatko Bačić Festschrift** on machine-learning for wavefunction dynamics is accepted by Molecular Physics!\n\n- Hao Zeng, Yitian Kou, Xiang Sun, Physics-Informed Neural Networks for Quantum Propagators in Wavepacket Dynamics, *Mol. Phys.* (DOI: [10.1080/00268976.2025.2501775](https://doi.org/10.1080/00268976.2025.2501775)). (Special Issue “Zlatko Bačić Festschrift”)"
   },
@@ -91,7 +141,7 @@ items: [
   {
     "title": "2024 International Symposium on Quantum Dynamics of Complex Systems (7/2)",
     "date": "2024-07-02",
-    "content": "### 2024 International Symposium on Quantum Dynamics of Complex Systems\n\nThe symposium focuses on understanding the electronic and nuclear quantum effects in complex molecular systems, liquids, materials, and biomolecules. From unraveling nonadiabatic transition between multiple potential energy surfaces in photoinduced processes to elucidating the impact of nuclear tunneling and zero-point energy, quantum effects emerge as pivotal factors in these complex systems. The challenge to simulate quantum dynamics in large, disordered, and warm systems has motivated the development of new tools to accurately describe many-body interactions and quantum dynamics on the atomistic level. Through theoretical and computational approaches, efforts will be directed towards modeling quantum dynamical phenomena in realistic scenarios such as spectroscopy of condensed-phase matter, photochemical reactions in biological chromophores, and electronic energy transfer in photovoltaic devices. The symposium offers a cutting-edge platform for international scholars working in the vibrant and rapidly evolving field, fostering collaboration and innovation. The gathering of outstanding scholars will cultivate novel ideas and methodologies for tackling complex challenges. It also provides excellent learning experiences for young scholars and graduate students. The symposium is co-sponsored by the Editorial Office of the Chinese Journal of Chemical Physics and NYU-ECNU Center for Computational Chemistry at NYU Shanghai.\n\n**Date:** July 2, 2024\n\n**Venue:** NYU Shanghai | 567 West Yangsi Road, Pudong New District, Shanghai, China\n\n**Website:** [https://www.quantum-dynamics-symposium.org/](https://www.quantum-dynamics-symposium.org/)\n\n**Invited Speakers:**\n\n[Jun Chen](https://people.ucas.ac.cn/~junchen) | Fujian Institute of Research on the Structure of Matter, Chinese Academy of Sciences\n\n[Bina Fu](http://english.dicp.cas.cn/en_sourcedb_dicp/people/Profes/202310/t20231031_461994.html) | Dalian Institute of Chemical Physics, Chinese Academy of Sciences\n\n[Xing Gao](https://materials.sysu.edu.cn/teacher/294) | Sun Yat-sen University\n\n[Francesco Paesani](https://www-chem.ucsd.edu/faculty/profiles/paesani_francesco.html) | University of California, San Diego\n\n[Jiajun Ren](http://www.chem.bnu.edu.cn/szll/jsdw/llhwlhxyjs/fjs3/242997.html) | Beijing Normal University\n\n[Qiang Shi](http://qshi.iccas.ac.cn/) | Institute of Chemistry, Chinese Academy of Sciences\n\n[Xiang Sun](https://research.shanghai.nyu.edu/centers-and-institutes/chemistry/people/xiang-sun) | NYU Shanghai\n\n[Yasuteru Shigeta](https://trios.tsukuba.ac.jp/en/researcher/0000000539) | University of Tsukuba\n\n[Mark Tuckerman](https://research.shanghai.nyu.edu/centers-and-institutes/chemistry/people/mark-tuckerman) | New York University\n\n[Linjun Wang](https://person.zju.edu.cn/en/linjunwang) | Zhejiang University\n\n[Yi Zhao](https://chem.xmu.edu.cn/en/info/1010/1278.htm) | Xiamen University\n\n[Xiao Zheng](https://chemistry.fudan.edu.cn/chemen/42/68/c22425a475752/page.htm) | Fudan University"
+    "content": "### 2024 International Symposium on Quantum Dynamics of Complex Systems\n\nThe symposium focuses on understanding the electronic and nuclear quantum effects in complex molecular systems, liquids, materials, and biomolecules. From unraveling nonadiabatic transition between multiple potential energy surfaces in photoinduced processes to elucidating the impact of nuclear tunneling and zero-point energy, quantum effects emerge as pivotal factors in these complex systems. The challenge to simulate quantum dynamics in large, disordered, and warm systems has motivated the development of new tools to accurately describe many-body interactions and quantum dynamics on the atomistic level. Through theoretical and computational approaches, efforts will be directed towards modeling quantum dynamical phenomena in realistic scenarios such as spectroscopy of condensed-phase matter, photochemical reactions in biological chromophores, and electronic energy transfer in photovoltaic devices. The symposium offers a cutting-edge platform for international scholars working in the vibrant and rapidly evolving field, fostering collaboration and innovation. The gathering of outstanding scholars will cultivate novel ideas and methodologies for tackling complex challenges. It also provides excellent learning experiences for young scholars and graduate students. The symposium is co-sponsored by the Editorial Office of the Chinese Journal of Chemical Physics and NYU-ECNU Center for Computational Chemistry at NYU Shanghai.\n\n**Date:** July 2, 2024\n\n**Venue:** NYU Shanghai | 567 West Yangsi Road, Pudong New District, Shanghai, China\n\n**Website:** [https://www.quantum-dynamics-symposium.org/](https://www.quantum-dynamics-symposium.org/)"
   },
   {
     "title": "Welcome summer researchers Yiqun, Samuel, and Kangqi!",
@@ -121,7 +171,7 @@ items: [
   {
     "title": "2024 International Symposium on Computational Molecular Science and Machine Learning (6/29-7/1)",
     "date": "2024-03-21",
-    "content": "Welcome to attend the **2024 International Symposium on Computational Molecular Science and Machine Learning**, June 29-July 1, 2024, NYU Shanghai.\n\nSymposium link: [https://computational-chemistry-conference.shanghai.nyu.edu/](https://computational-chemistry-conference.shanghai.nyu.edu/)\n\n### About the Symposium\n\nThis symposium focuses on the recent development in computational molecular science as well as applications of machine learning methods in related fields. The topics covered include electronic structure theory, chemical dynamics, biological systems and materials as well as related developments of machine learning methods in these areas. The symposium aims to provide an advanced platform for exchange and collaboration among international and domestic scholars. The gathering of an outstanding group of scholars with expertise in related fields will help cultivate novel research ideas and develop new methodologies for the most challenging problems in these topics. The symposium will also provide excellent learning experiences for attending young scholars and students who are working in related areas. The symposium is sponsored by the NYU-ECNU Center for Computational Chemistry at NYU Shanghai and Shanghai Frontiers Science Center of Artificial Intelligence and Deep Learning at NYU Shanghai.\n\n**Date:** June 29-July 1, 2024\n\n**Venue:** NYU Shanghai | 567 West Yangsi Road, Pudong New District, Shanghai, China\n\n**Contact Email:** [shanghai.compuchem@nyu.edu](mailto:shanghai.compuchem@nyu.edu)\n\n**Contact Phone:** (021) 20595665"
+    "content": "Welcome to attend the **2024 International Symposium on Computational Molecular Science and Machine Learning**, June 29-July 1, 2024, NYU Shanghai.\n\nSymposium link: [https://computational-chemistry-conference.shanghai.nyu.edu/](https://computational-chemistry-conference.shanghai.nyu.edu/)\n\n### About the Symposium\n\nThis symposium focuses on the recent development in computational molecular science as well as applications of machine learning methods in related fields. The topics covered include electronic structure theory, chemical dynamics, biological systems and materials as well as related developments of machine learning methods in these areas. The symposium aims to provide an advanced platform for exchange and collaboration among international and domestic scholars. The gathering of an outstanding group of scholars with expertise in related fields will help cultivate novel research ideas and develop new methodologies for the most challenging problems in these topics. The symposium will also provide excellent learning experiences for attending young scholars and students who are working in related areas. The symposium is sponsored by the NYU-ECNU Center for Computational Chemistry at NYU Shanghai and Shanghai Frontiers Science Center of Artificial Intelligence and Deep Learning at NYU Shanghai.\n\n**Date:** June 29-July 1, 2024\n\n**Venue:** NYU Shanghai | 567 West Yangsi Road, Pudong New District, Shanghai, China\n\n**Contact Email:** [shanghai.compuchem@nyu.edu](mailto:shanghai.compuchem@nyu.edu)"
   },
   {
     "title": "Congrats to Haorui Hu on accepting NYU!",
@@ -134,11 +184,6 @@ items: [
     "content": "Congratulations to our group alumni Gustave Li at NYU Shanghai, who recently accepted an offer from Caltech! We wish him to have a successful graduate study at Caltech!"
   },
   {
-    "title": "Postdoc openings are available in our group!",
-    "date": "2024-02-10",
-    "content": "**Postdoc openings in ****Theoretical and Computational Chemistry**\n\n**Description**\n\nNYU Shanghai welcomes applications for postdoctoral fellowships in the research group of Prof. Xiang Sun. The selected individuals will play a leading role in developing and applying new computational methods for chemical dynamics in condensed phase and simulation of ultrafast nonlinear spectroscopies. Specifically, photo-induced charge and energy transfer dynamics as well as structural dynamics of light-harvesting systems such as organic photovoltaic and luminescent molecules in liquid solutions and interfaces will be investigated. Classical molecular dynamics, mixed quantum-classical, semiclassical, and path integral approaches will be developed for such systems. Novel dynamical methods will be applied to nonlinear spectroscopies to help reveal important molecular information behind them. More details can be found at [https://xiangsunlab.github.io](https://xiangsunlab.github.io).\n\nResearch at NYU Shanghai is supported by the NYU-ECNU Center for Computational Chemistry, a research institute operated jointly by NYU, NYU Shanghai, and East China Normal University (ECNU). The center has a core group of faculty members who are conducting frontier research in various fields of computational chemistry, biology, and material sciences. The postdoc fellow will be also affiliated with the center. More details can be found at [https://research.shanghai.nyu.edu/chemistry](https://research.shanghai.nyu.edu/chemistry).\n\nPlease visit our website at [http://shanghai.nyu.edu/about/work/fellowships](http://shanghai.nyu.edu/about/work/fellowships) for the availability of this opening. If you have any questions, please email **[xiang.sun@nyu.edu](mailto:xiang.sun@nyu.edu)**.\n\nTerms of employment at [NYU Shanghai](https://shanghai.nyu.edu/academics/faculty) are comparable to NYU New York and other U.S. institutions.\n\n**Qualifications**\n\n- Ph.D. (or expected) in chemistry, physics, or related fields\n\n- Experience with molecular dynamics simulations and quantum chemistry calculations\n\n- Experience with developing dynamics codes in C/C++, Fortran, or Python\n\n- Excellent communication skills (writing and speaking in English)\n\n### Application Instructions\n\n**The two postdoc fellowship positions **are available immediately and will remain open until filled. The term is for one year initially with the possibility of extension to multiple years. Benefits and salary are competitive. To be considered, applicants should prepare the following items and apply by emailing the following materials to Prof. Xiang Sun at **[xiang.sun@nyu.edu](mailto:xiang.sun@nyu.edu)**:\n\n- a cover letter with a brief description of research accomplishments and interests;\n\n- a curriculum vitae with a list of publications;\n\n- contact information for 3 recommendation-letter writers.\n\nIf you have any questions regarding your Interfolio application, please email the NYU Shanghai NY Office of Faculty Recruitment **[shanghai.faculty.recruitment@nyu.edu](mailto:shanghai.faculty.recruitment@nyu.edu)**.\n\n**About NYU Shanghai:**\n\n[NYU Shanghai](https://shanghai.nyu.edu/academics/faculty) is the third degree-granting campus within New York University’s global network. It is the first higher education joint venture in China authorized to grant degrees that are accredited in the U.S. as well as in China. All teaching is conducted in English. A research university with liberal arts and science at its core, NYU Shanghai resides in one of the world’s great cities with a vibrant intellectual community. NYU Shanghai recruits scholars of the highest caliber who are committed to NYU’s global vision of transformative teaching and innovative research and who embody the global society in which we live.\n\nNYU’s global network includes degree-granting campuses in New York, Shanghai, and Abu Dhabi, complemented by fourteen additional academic centers across five continents. Faculty and students circulate within the network in pursuit of common research interests and cross-cultural, interdisciplinary endeavors, both local and global.\n\nFor people in the EU, click here for information on your privacy rights under GDPR: [www.nyu.edu/it/gdpr.](http://www.nyu.edu/it/gdpr)\n\n[NYU Shanghai](https://shanghai.nyu.edu/academics/faculty) is an equal opportunity employer committed to equity, diversity, and social inclusion. We strongly encourage applications from under-represented individuals in the profession, across color, creed, race, ethnic and national origin, physical ability, and gender and sexual identity. [NYU Shanghai](https://shanghai.nyu.edu/academics/faculty) affirms the value of differing perspectives on the world as we strive to build the strongest possible university with the widest reach.\n\nEOE/AA/Minorities/Females/Vet/Disabled/Sexual Orientation/Gender Identity Employer"
-  },
-  {
     "title": "Our paper on Generalized NE-FGR was accepted by J Chem Phys!",
     "date": "2023-12-28",
     "content": "Congratulations! The Journal of Chemical Physics accepted our paper on Generalized Nonequilibrium Fermi’s Golden Rule for Multiple States!\n\n- Xiang Sun, Xiaofang Zhang, Zengkui Liu, Generalized Nonequilibrium Fermi’s Golden Rule and Its Semiclassical Approximations for Electronic Transitions between Multiple States, *J. Chem. Phys.* (accepted)"
@@ -146,7 +191,7 @@ items: [
   {
     "title": "Xiang is appinted to Editorial Advisory Board of the Journal of Chemical Physics",
     "date": "2023-12-22",
-    "content": "Xiang is appointed to the *Editorial Advisory Board* of *The Journal of Chemical Physics* for a three-year term beginning 1 January 2024.\n\n[EAB of JCP link](https://pubs.aip.org/aip/jcp/pages/advisory)"
+    "content": "Xiang is appointed to the *Editorial Advisory Board* of *The Journal of Chemical Physics* for a three-year term beginning 1 January 2024."
   },
   {
     "title": "Prof. Zhigang Shuai gives chemistry center seminar",
@@ -199,11 +244,6 @@ items: [
     "content": "Congratulations to Zengkui on the newly accepted paper about the multi-state reaction coordinate model by Journal of Chemical Theory and Computation!\n\n- Zengkui Liu, Haorui Hu, Xiang Sun, Multi-State Reaction Coordinate Model for Charge and Energy Transfer Dynamics in the Condensed Phase, *J. Chem. Theory Comput.* (2023) DOI: acs.jctc.3c00770"
   },
   {
-    "title": "We have Research Associate openings available!",
-    "date": "2023-07-24",
-    "content": "Currently, we have multiple research associate openings available in the group, one type is in software engineer and the other is in computational chemistry.\n\nPlease visit this [job post](https://shanghai-nyu.icims.com/jobs/12312/research-associate-of-computational-chemistry---%e8%ae%a1%e7%ae%97%e5%8c%96%e5%ad%a6%e7%a7%91%e7%a0%94%e5%8a%a9%e7%90%86/job) for more details. If you have any questions, please email Prof. Sun at **[xiang.sun@nyu.edu](mailto:xiang.sun@nyu.edu)**."
-  },
-  {
     "title": "Prof. Yuan Ping gives a seminar at the center",
     "date": "2023-07-14",
     "content": "We are glad to announce that **Professor Yuan Ping **from the University of Wisconsin – Medison will give an online seminar on “First-Principles Many-Body Theory and Quantum Dynamics for Materials in Quantum Information Science” at NYU-ECNU Center for Computational Chemistry."
@@ -216,7 +256,7 @@ items: [
   {
     "title": "Zengkui won Best Poster Award at 33rd CCS annual meeting, Congrats!",
     "date": "2023-06-20",
-    "content": "Zengkui won Best Poster Award at the 33rd CCS annual meeting, Congrats!\n\nHis poster title is **Open-chain path integral method to Fermi’s golden rule rate**.\n\n[Zengkui_ccs_meeting_2023](https://wp.nyu.edu/xiangsun/wp-content/uploads/sites/10624/2023/06/Zengkui_ccs_meeting_2023.pdf)"
+    "content": "Zengkui won Best Poster Award at the 33rd CCS annual meeting, Congrats!\n\nHis poster title is **Open-chain path integral method to Fermi’s golden rule rate**."
   },
   {
     "title": "Xiang gaves invited talk at 33rd CCS annual meeting",
@@ -231,7 +271,7 @@ items: [
   {
     "title": "Xiaofang successfully passed Master’s thesis defense!",
     "date": "2023-05-17",
-    "content": "Congratulations to Xiaofang on successfully passing the Master’s thesis defense on May 17, 2023. She will be continuing her doctoral study in our group in the NYU SH-track PhD program starting this fall.\n\nFrom left to right: Mac Huang, Ye Mei, Xiaofang Zhang, Tong Zhu, and Xiang Sun"
+    "content": "Congratulations to Xiaofang on successfully passing the Master’s thesis defense on May 17, 2023. She will be continuing her doctoral study in our group in the NYU SH-track PhD program starting this fall."
   },
   {
     "title": "Prof. Francesco Paesani gives a seminar at the center",
@@ -247,11 +287,6 @@ items: [
     "title": "New Bund campus will be open on Feb 27!",
     "date": "2023-02-22",
     "content": "Finally, after 3 months of moving, our New Bund (Qiantan) campus will be open on Feb 27, 2023!\n\nOur group’s office will be Room E617, welcome to visit us!\n\nAddress: 567 West Yangsi Road, Pudong New Area, Shanghai, 200126"
-  },
-  {
-    "title": "Zengkui is our moving captain for relocating to New Bund Campus!",
-    "date": "2022-12-14",
-    "content": "Zengkui will be the moving captain of our group for relocating to the New Bund (Qiantan) Campus! Our moving schedule will be from mid-December 2022 to early January 2023. Farewell to the Century Avenue campus!\n\nIn the Qiantan campus, Prof. Sun’s office will be E621, and the Sun group office will be E617 on the 6th floor of the East building.\n\nFor more information about Qiantan campus, visit [https://shanghai.nyu.edu/animatedmagazine/qiantan-campus](https://shanghai.nyu.edu/animatedmagazine/qiantan-campus)"
   },
   {
     "title": "Domi successfully passed master thesis defense!",
@@ -301,17 +336,17 @@ items: [
   {
     "title": "Collaborative work on charge transfer in DBP/C70 is accepted by JPCL!",
     "date": "2022-01-08",
-    "content": "Congratulations, our manuscript on charge transfer rate constant in DBP/C70 is accepted by JPCL!\n\nJacob Tinnin, Srijana Bhandari, Pengzhi Zhang, Eitan Geva*, Barry D. Dunietz*, **Xiang Sun***, Margaret S. Cheung*, Correlating interfacial charge transfer rates with interfacial molecular structure in the tetraphenyldibenzoperiflanthene/C_70 organic photovoltaic system, *J. Phys. Chem. Lett.* (accepted)"
+    "content": "Congratulations, our paper on charge transfer rate constant in DBP/C70 is accepted by JPCL!\n\nJacob Tinnin, Srijana Bhandari, Pengzhi Zhang, Eitan Geva, Barry D. Dunietz, Xiang Sun, Margaret S. Cheung, Correlating interfacial charge transfer rates with interfacial molecular structure in the tetraphenyldibenzoperiflanthene/C70 organic photovoltaic system, *J. Phys. Chem. Lett.* (accepted)"
   },
   {
-    "title": "Daxin and Zhubin’s paper on CNN-LSTM for quantum dynamics is accepted by JCP!",
+    "title": "Daxin’s paper on CNN-LSTM for quantum dynamics is accepted by JCP!",
     "date": "2021-11-28",
     "content": "Congrats to Daxin and Zhubin! The paper on the machine learning model based on CNN-LSTM for predicting quantum dynamics is now accepted by JCP!\n\nDaxin Wu, Zhubin Hu, Jiebo Li, Xiang Sun, [Forecasting Nonadiabatic Dynamics using Hybrid Convolutional Neural Network/Long Short-Term Memory Network](https://aip.scitation.org/doi/10.1063/5.0073689), *J. Chem. Phys.* (accepted) [ChemRxiv preprint](https://chemrxiv.org/engage/chemrxiv/article-details/6162f48b2aca53d3be5ef67b)"
   },
   {
     "title": "Domi’s paper on CT landscape is accepted by JPC B!",
     "date": "2021-11-17",
-    "content": "Congrats to Domi! The paper on CT landscape is now accepted by JPC B!\n\n- Dominikus Brian, Xiang Sun, [Charge-Transfer Landscape Manifesting the Structure-Rate Relationship in the Condensed Phase via Machine Learning](https://pubs.acs.org/doi/10.1021/acs.jpcb.1c08260), (accepted by *J. Phys. Chem. B*) [ChemRxiv preprint](https://chemrxiv.org/engage/chemrxiv/article-details/61862dfaf9f05b2eefee9d9f)\n\nWe have a romantic heart-shaped CT landscape as TOC graphic:"
+    "content": "Congrats to Domi! The paper on CT landscape is now accepted by JPC B!\n\n- Dominikus Brian, Xiang Sun, [Charge-Transfer Landscape Manifesting the Structure-Rate Relationship in the Condensed Phase via Machine Learning](https://pubs.acs.org/doi/10.1021/acs.jpcb.1c08260), (accepted by *J. Phys. Chem. B*) [ChemRxiv preprint](https://chemrxiv.org/engage/chemrxiv/article-details/61862dfaf9f05b2eefee9d9f)"
   },
   {
     "title": "Xiang gives an invited talk at the 16th National Conference of Computer Chemistry",
@@ -344,11 +379,6 @@ items: [
     "content": "Welcome summer research students to join our group this summer!\n\n- Daxin Wu, Ruixuan Zhao (SRPMS) from Beihang University\n\n- Hongzhou Li (DURF) from NYUSH\n\n- Zihua Chen, Shanglin Yang, Jingyao Fu (DURF) from NYUSH\n\n- Yihan Li (Summer research intern) from Fudan University"
   },
   {
-    "title": "CTRAMER package paper was accepted by JCP!",
-    "date": "2021-05-14",
-    "content": "I am happy to announce that the first open-source software for mesoscale modeling and theory for materials design developed from our collaboration was accepted to the JCP!\n\nJacob Tinnin, Huseyin Aksu, Zhengqing Tong, Pengzhi Zhang, Eitan Geva*, Barry D. Dunietz*, **Xiang Sun***, Margaret S. Cheung*, [CTRAMER: An Open-Source Software Package for Correlating Interfacial Charge Transfer Rate Constants with Donor/Acceptor Geometries in Organic Photovoltaic Materials](https://aip.scitation.org/doi/10.1063/5.0050574), *J. Chem. Phys.* (accepted)"
-  },
-  {
     "title": "Ningyi and Xiang visited Nanjing University",
     "date": "2021-05-13",
     "content": "Ningyi and Xiang visited the Institute of Theoretical and Computational Chemistry, Nanjing University. Xiang gave a talk on charge transfer dynamics.\n\nHost: Prof. Haibo Ma"
@@ -356,7 +386,7 @@ items: [
   {
     "title": "Xiang presents at Les Houches workshop on Quantum Dynamics and Spectroscopy",
     "date": "2021-05-05",
-    "content": "Xiang presents at **Les Houches workshop on “Quantum Dynamics and Spectroscopy of Functional Molecular Materials and Biological Photosystems”**, online 3-7 May 2021, which was held at **École de Physique des Houches** in previous years.\n\nMore information can be found at [https://www.theochem.uni-frankfurt.de/LesHouches2021/index.php](https://www.theochem.uni-frankfurt.de/LesHouches2021/index.php)"
+    "content": "Xiang presents at **Les Houches workshop on “Quantum Dynamics and Spectroscopy of Functional Molecular Materials and Biological Photosystems”**, online 3-7 May 2021, which was held at École de Physique des Houches in previous years.\n\nMore information can be found at [https://www.theochem.uni-frankfurt.de/LesHouches2021/index.php](https://www.theochem.uni-frankfurt.de/LesHouches2021/index.php)"
   },
   {
     "title": "Xiang presents at 32nd Chinese Chemistry Society (CCS) Congress",
@@ -366,12 +396,12 @@ items: [
   {
     "title": "Our paper on 3-state model for photoinduced CT was accepted by JCP!",
     "date": "2021-04-19",
-    "content": "Our paper on 3-state harmonic models for photoinduced charge transfer was accepted by JCP! Congratulations, Domi and Zengkui!\n\n- Dominikus Brian, Zengkui Liu, Barry D. Dunietz, Eitan Geva, **Xiang Sun***, Three-State Harmonic Models for Photoinduced Charge Transfer,* J. Chem. Phys.* (accepted)"
+    "content": "Our paper on 3-state harmonic models for photoinduced charge transfer was accepted by JCP! Congratulations, Domi and Zengkui!\n\n- Dominikus Brian, Zengkui Liu, Barry D. Dunietz, Eitan Geva, Xiang Sun, Three-State Harmonic Models for Photoinduced Charge Transfer, *J. Chem. Phys.* (accepted)"
   },
   {
     "title": "Zhonghan Hu is invited to give an online seminar",
     "date": "2021-04-12",
-    "content": "We are glad to announce that Professor Zhonghan Hu from Qingdao Institute for Theoretical and Computational Sciences (QITCS), Shandong University will give an online seminar on “A MEAN-FIELD VIEW OF THE SCREENING EFFECT IN SIMULATIONS” at NYU-ECNU Center for Computational Chemistry.\n\n**Abstract**\n\nOne of the most significant properties of ordinary condensed phase matter is the screening of Coulomb force: a system in thermal equilibrium does not tolerate any charge inhomogeneity over the range of a few intermolecular distances. As a consequence, charge distribution and correlations are subject to specific constraints. It is, however, nontrivial to develop proper handlings of the long-ranged Coulomb potential to satisfy the constraints in typical molecular dynamics and Monte Carlo simulations of explicit molecules in bulk and/or at interfaces with a finite setup of the simulation cell. In this talk, I will suggest a symmetry-preserving mean-field (SPMF) approach, which could be extended naturally from some of the early mean-field concepts, like the seminal Debye-Huckel theory, to recover the screening condition for finite degrees of freedom. SPMF argues that certain slowly varying components of the electrostatic potential can be replaced by its average over the degrees of freedom in the directions with preserved symmetry. In addition, to provide efficient and accurate handling of the electrostatics in molecular simulations, the involved mean-field theory predicts analytically some of the failures of the existing treatments for both bulk and interfaces, which could be verified by numerical simulations and will be the main focus of my talk.\n\n**BIOGRAPHY**\n\nZhonghan Hu obtained his bachelor degree in chemical physics at the University of Science and Technology of China (USTC) in 2003 and his PhD degree in Chemistry with Claudio Margulis at the University of Iowa in 2007. After working as a postdoc with John Weeks at the University of Maryland, College Park and with Bruce Berne at Colombia University, he started his own group at Jilin University in August, 2010 and then moved to Shandong University at Qingdao in December, 2019. In the past, he carried out simulations of room-temperature ionic liquids to understand their transport and optical properties, and applied stochastic models to analyze biological force rupture experiments. His main research interest in the recent ten years is to understand statistical mechanics of liquids and to develop efficient techniques for handlings of electrostatics in simulations."
+    "content": "We are glad to announce that Professor Zhonghan Hu from Qingdao Institute for Theoretical and Computational Sciences (QITCS), Shandong University will give an online seminar on “A MEAN-FIELD VIEW OF THE SCREENING EFFECT IN SIMULATIONS” at NYU-ECNU Center for Computational Chemistry."
   },
   {
     "title": "Xiang gives an invited talk at East China University of Science and Technology",
@@ -381,12 +411,12 @@ items: [
   {
     "title": "Our paper on Linear-Response and Nonlinear-Response IMT was accepted by JCTC!",
     "date": "2021-02-26",
-    "content": "Our paper on Linear-Response and Nonlinear-Response of instantaneous Marcus theory (IMT) was accepted by JCTC! Congratulations, Domi!\n\nDominikus Brian, **Xiang Sun**, Linear-Response and Nonlinear-Response Formulations of the Instantaneous Marcus Theory for Nonequilibrium Photoinduced Charge Transfer, J. Chem. Theory Comput. (accepted)"
+    "content": "Our paper on Linear-Response and Nonlinear-Response of instantaneous Marcus theory (IMT) was accepted by JCTC! Congratulations, Domi!\n\nDominikus Brian, Xiang Sun, Linear-Response and Nonlinear-Response Formulations of the Instantaneous Marcus Theory for Nonequilibrium Photoinduced Charge Transfer, J. Chem. Theory Comput. (accepted)"
   },
   {
     "title": "Our paper on aggregation-induced dual phosphorescence was accepted by Nature Communications!",
     "date": "2021-01-11",
-    "content": "Our manuscript on aggregation-induced dual phosphorescence was accepted by *Nature Communications*, Congrats, Zhubin!\n\nTao Wang, **Zhubin Hu**, Xiancheng Nie, Linkun Huang, Hui Miao, **Xiang Sun**, Guoqing Zhang, [Thermochromic Aggregation-Induced Dual Phosphorescence via Temperature-Dependent sp3-Linked Donor-Acceptor Electronic Coupling](https://www.nature.com/articles/s41467-021-21676-5), *Nat. Commun.* **12**, 1364 (2021)."
+    "content": "Our manuscript on aggregation-induced dual phosphorescence was accepted by *Nature Communications*, Congrats, Zhubin!\n\nTao Wang, Zhubin Hu, Xiancheng Nie, Linkun Huang, Hui Miao, Xiang Sun, Guoqing Zhang, [Thermochromic Aggregation-Induced Dual Phosphorescence via Temperature-Dependent sp3-Linked Donor-Acceptor Electronic Coupling](https://www.nature.com/articles/s41467-021-21676-5), *Nat. Commun.* **12**, 1364 (2021)."
   },
   {
     "title": "Xiang gives talk at 2020 Statistical Mechanics Symposium of Complex Systems",
@@ -401,22 +431,22 @@ items: [
   {
     "title": "Xiang gives an invited talk at Chemical Physics Youth Forum",
     "date": "2020-10-24",
-    "content": "Xiang gives an invited talk entitled *Photoinduced Charge Transfer Dynamics via Semiclassical Methods* at **Chemical Physics Youth Forum – 2020 Theoretical and Computational Chemistry Seminar** organized by the Chinese Journal of Chemical Physics, USTC, and Qiang Shi and Peng Bao from the Institute of Chemistry, CAS."
+    "content": "Xiang gives an invited talk entitled **Photoinduced Charge Transfer Dynamics via Semiclassical Methods* at **Chemical Physics Youth Forum – 2020 Theoretical and Computational Chemistry Seminar** organized by the Chinese Journal of Chemical Physics, USTC, and Qiang Shi and Peng Bao from the Institute of Chemistry, CAS."
   },
   {
     "title": "Our paper on nonequilibrium charge transfer was accepted by JPC B!",
     "date": "2020-10-07",
-    "content": "Our paper on semiclassical nonequilibrium Fermi’s golden rule for photoinduced charge transfer has been accepted by JPC B!\n\nZhubin Hu, Zhengqing Tong, Margaret S. Cheung, Barry D. Dunietz, Eitan Geva, Xiang Sun, Photoinduced Charge Transfer Dynamics in Carotenoid-Porphyrin-C_60 Triad via the Linearized Semiclassical Nonequilibrium Fermi’s Golden Rule, J. Phys. Chem. B (accepted)"
+    "content": "Our paper on semiclassical nonequilibrium Fermi’s golden rule for photoinduced charge transfer has been accepted by JPC B!\n\nZhubin Hu, Zhengqing Tong, Margaret S. Cheung, Barry D. Dunietz, Eitan Geva, Xiang Sun, Photoinduced Charge Transfer Dynamics in Carotenoid-Porphyrin-C60 Triad via the Linearized Semiclassical Nonequilibrium Fermi’s Golden Rule, J. Phys. Chem. B (accepted)"
   },
   {
     "title": "Our paper on CT with polarizable force field was accepted by JCTC!",
     "date": "2020-09-16",
-    "content": "Our paper on charge transfer rate with polarizable force fields and the right level of electronic structure was accepted by JCTC!\n\nJaebeom Han, Pengzhi Zhang, Huseyin Aksu, Buddhadev Maiti, **Xiang Sun***, Eitan Geva*, Barry D. Dunietz*, and Margaret S. Cheung*, On the Interplay Between Electronic Structure and Polarizable Force Fields When Calculating Solution-Phase Charge Transfer Rates, *J. Chem. Theory Comput.* (accepted)"
+    "content": "Our paper on charge transfer rate with polarizable force fields and the right level of electronic structure was accepted by JCTC!\n\nJaebeom Han, Pengzhi Zhang, Huseyin Aksu, Buddhadev Maiti, Xiang Sun, Eitan Geva, Barry D. Dunietz, and Margaret S. Cheung, On the Interplay Between Electronic Structure and Polarizable Force Fields When Calculating Solution-Phase Charge Transfer Rates, *J. Chem. Theory Comput.* (accepted)"
   },
   {
     "title": "Online seminar series at VISTA!",
     "date": "2020-09-07",
-    "content": "We are organizing biweekly series of **Virtual International Seminar on Theoretical Advancements (VISTA)**. Faculty and students are welcome to propose to give a 40 min or 20 min Zoom talk. For more details on schedule, please see\n\n[https://quantum-dynamics-hub.github.io/VISTA/](https://quantum-dynamics-hub.github.io/VISTA/)\n\n### About VISTA\n\nThe bi-weekly seminar series “Virtual International Seminar on Theory Advancement” (VISTA) is a “presentation journal”, a platform to facilitate interactions and scientific discussions of the International community at covid time and beyond. The seminar features presentations by researchers at various levels (from undergraduate students to faculty and scientists) on theory and computations for nonequilibrium dynamics of excited states and quantum dynamics, broadly defined. Of special interest to this seminar are new developments in quantum and nonadiabatic dynamics, trajectory-based and surface hopping approaches, semiclassical and quantum-classical methodologies, new software and tools for nonadiabatic and quantum dynamics, as well as the applications of these cutting-edge techniques to a variety of complex systems and materials, such as solar energy harvesting and photoresponsive materials. The experimental works that require attention of and can benefit from theoretical investigations are also of interest.\n\n### **Keywords and topics:**\n\n- nonadiabatic dynamics\n\n- excited states\n\n- quantum dynamics\n\n- quantum-classical methods\n\n- charge transfer\n\n- excitation energy transfer\n\n- trajectory surface hopping\n\n- TD-DFT\n\n- algorithms, methods, and software for excited state, nonadiabatic, and quantum dynamics\n\n### Executive Committee\n\n- **Agostini, Federica** University Paris-Saclay, France\n\n- **Akimov, Alexey** University at Buffalo, SUNY, USA\n\n- **Barbatti, Mario** Aix-Marseille University, Frace\n\n- **Blumberger, Jochen** University College London, UK\n\n- **Curchod, Basile** Durham University, UK\n\n- **Dupuis, Michel** University at Buffalo, SUNY, USA\n\n- **Jain, Amber** Indian Institute of Technology, Bombay, India\n\n- **Levine, Ben** Stony Brook University, SUNY, USA\n\n- **Gonzalez, Lecitica** University of Vienna, Austria\n\n- **Kilin, Dmitri** North Dakota State University, USA\n\n- **Long, Run** Beijing Normal University, China\n\n- **Prezhdo, Oleg** University of Southern California, USA\n\n- **Rego, Luis** Universidade Federal de Santa Catarina, Brazil\n\n- **Sanyal, Biplab** Upsala University, Sweden\n\n- **Sun, Xiang** New York University Shanghai, China\n\n- **Tretiak, Sergei** Los Alamos National Laboratory, USA\n\n- **Wang, Linjun** Zhejiang University\n\n- **Zhao, Jin** University of Science and Technology of China, China\n\n- **Zhugayevych, Andriy** Skolkovo Institute of Technology, Russia"
+    "content": "We are organizing biweekly series of **Virtual International Seminar on Theoretical Advancements (VISTA)**. Faculty and students are welcome to propose to give a 40 min or 20 min Zoom talk. For more details on schedule, please see\n\n[https://quantum-dynamics-hub.github.io/VISTA/](https://quantum-dynamics-hub.github.io/VISTA/)\n\n### About VISTA\n\nThe bi-weekly seminar series “Virtual International Seminar on Theory Advancement” (VISTA) is a “presentation journal”, a platform to facilitate interactions and scientific discussions of the International community at covid time and beyond. The seminar features presentations by researchers at various levels (from undergraduate students to faculty and scientists) on theory and computations for nonequilibrium dynamics of excited states and quantum dynamics, broadly defined. Of special interest to this seminar are new developments in quantum and nonadiabatic dynamics, trajectory-based and surface hopping approaches, semiclassical and quantum-classical methodologies, new software and tools for nonadiabatic and quantum dynamics, as well as the applications of these cutting-edge techniques to a variety of complex systems and materials, such as solar energy harvesting and photoresponsive materials. The experimental works that require attention of and can benefit from theoretical investigations are also of interest.\n\n### **Keywords and topics:**\n\n- nonadiabatic dynamics\n\n- excited states\n\n- quantum dynamics\n\n- quantum-classical methods\n\n- charge transfer\n\n- excitation energy transfer\n\n- trajectory surface hopping\n\n- TD-DFT\n\n- algorithms, methods, and software for excited state, nonadiabatic, and quantum dynamics"
   },
   {
     "title": "Welcome to Zhubin and Ningyi!",
@@ -426,12 +456,12 @@ items: [
   {
     "title": "Our paper on modeling charge transfer was accepted by JCP!",
     "date": "2020-07-07",
-    "content": "Our paper on mapping spin-boson Hamiltonians for charge transfer in the molecular triad was accepted by J. Chem. Phys.! Congrats, Zhengqing!\n\nZhengqing Tong, Xing Gao, Margaret S. Cheung, Barry D. Dunietz, Eitan Geva, **Xiang Sun***, [Charge Transfer Rate Constants for the Carotenoid-Porphyrin-C60 Molecular Triad Dissolved in Tetrahydrofuran: The Spin-Boson Model vs. The Linearized Semiclassical Approximation](https://aip.scitation.org/doi/10.1063/5.0016160), *J. Chem. Phys. ***153**, 044105 (2020)."
+    "content": "Our paper on mapping spin-boson Hamiltonians for charge transfer in the molecular triad was accepted by J. Chem. Phys.! Congrats, Zhengqing!\n\nZhengqing Tong, Xing Gao, Margaret S. Cheung, Barry D. Dunietz, Eitan Geva, Xiang Sun, [Charge Transfer Rate Constants for the Carotenoid-Porphyrin-C60 Molecular Triad Dissolved in Tetrahydrofuran: The Spin-Boson Model vs. The Linearized Semiclassical Approximation](https://aip.scitation.org/doi/10.1063/5.0016160), *J. Chem. Phys.* **153**, 044105 (2020)."
   },
   {
     "title": "Our paper on 2D Raman spectra via RPMD was accepted by JCP!",
     "date": "2020-07-01",
-    "content": "Our paper entitled “Two-dimensional Raman Spectroscopy of Lennard-Jones Liquids via Ring-Polymer Molecular Dynamics” has been accepted by J. Chem. Phys., congrats, Zhengqing!\n\n- Zhengqing Tong, Pablo E. Videla*, Kenneth A. Jung, Victor S. Batista, **Xiang Sun***, [Two-dimensional Raman Spectroscopy of Lennard-Jones Liquids via Ring-Polymer Molecular Dynamics](https://aip.scitation.org/doi/10.1063/5.0015436), *J. Chem. Phys.* **153**, 034117 (2020)."
+    "content": "Our paper entitled “Two-dimensional Raman Spectroscopy of Lennard-Jones Liquids via Ring-Polymer Molecular Dynamics” has been accepted by J. Chem. Phys., congrats, Zhengqing!\n\n- Zhengqing Tong, Pablo E. Videla, Kenneth A. Jung, Victor S. Batista, Xiang Sun, [Two-dimensional Raman Spectroscopy of Lennard-Jones Liquids via Ring-Polymer Molecular Dynamics](https://aip.scitation.org/doi/10.1063/5.0015436), *J. Chem. Phys.* **153**, 034117 (2020)."
   },
   {
     "title": "Xiaofang Zhang joins our group, welcome!",
@@ -444,9 +474,9 @@ items: [
     "content": "Domi Brian and Zengkui Liu will be joining us this summer to embark their graduate study at NYU Shanghai, welcome!"
   },
   {
-    "title": "Our paper on interfacial charge transfer was accepted by Phys. Rev. Applied!",
+    "title": "Our paper on interfacial charge transfer was accepted by Phys Rev Applied!",
     "date": "2020-04-18",
-    "content": "Our paper entitled “Molecular-level exploration of the structure-function relation underlying interfacial charge transfer in the subphthalocyanine/C_60 organic photovoltaic system” was accepted by Physical Review Applied!\n\nJacob Tinnin, Srijana Bhandari, Pengzhi Zhang, Huseyin Aksu, Buddhadev Maiti, Eitan Geva*, Barry D. Dunietz*, **Xiang Sun***, Margaret S. Cheung*, [Molecular-Level Exploration of The Structure-Function Relations Underlying Interfacial Charge Transfer in The Subphthalocyanine:C60 Organic Photovoltaic System](https://journals.aps.org/prapplied/abstract/10.1103/PhysRevApplied.13.054075), *Phys. Rev. Applied* **13**, 054075 (2020)."
+    "content": "Our paper entitled “Molecular-level exploration of the structure-function relation underlying interfacial charge transfer in the subphthalocyanine/C60 organic photovoltaic system” was accepted by Physical Review Applied!\n\nJacob Tinnin, Srijana Bhandari, Pengzhi Zhang, Huseyin Aksu, Buddhadev Maiti, Eitan Geva, Barry D. Dunietz, Xiang Sun, Margaret S. Cheung, [Molecular-Level Exploration of The Structure-Function Relations Underlying Interfacial Charge Transfer in The Subphthalocyanine:C60 Organic Photovoltaic System](https://journals.aps.org/prapplied/abstract/10.1103/PhysRevApplied.13.054075), *Phys. Rev. Applied* **13**, 054075 (2020)."
   },
   {
     "title": "192-core Intel Platinum HPC nodes arrived",
@@ -471,17 +501,17 @@ items: [
   {
     "title": "Hui Dong visits NYU Shanghai",
     "date": "2019-12-12",
-    "content": "We are glad to announce that Professor Hui Dong from Graduate School of China Academy of Engineering Physics visits NYU Shanghai on Dec. 13, 2019, and will give a seminar on “Two dimensional spectroscopy and its applications” at NYU-ECNU Center for Computational Chemistry.\n\n**Abstract: **\n\nTwo-dimensional spectroscopy is an incisive tool to probe the dynamics directly and has been used in chemical reaction, energy transfer in biological complexes and electron transfer in physical materials. In this talk, I will explain how the two-dimensional spectroscopy works, and present its applications in natural light-harvesting system and strong-field ionization process.\n\n**Biography: **\n\nDr. Hui Dong received his bachelor degree from University of Science and Technology of China in 2006, and Ph. D. degree from Institute of Theoretical Physics of Chinese Academy of Sciences in 2011. After the postdoc in UC Berkeley (2011-2015) and Texas A&M (2015-2017), he joined Graduate School of China Academy of Engineering Physics (Beijing). His research focuses on advanced spectroscopy with quantum light and quantum thermodynamics."
+    "content": "We are glad to announce that Professor Hui Dong from Graduate School of China Academy of Engineering Physics visits NYU Shanghai on Dec. 13, 2019, and will give a seminar on “Two dimensional spectroscopy and its applications” at NYU-ECNU Center for Computational Chemistry."
   },
   {
     "title": "Our paper on 2D spectroscopy was accepted by JCP",
     "date": "2019-11-04",
-    "content": "Our paper on 2D spectroscopy was accepted by the Journal of Chemical Physics!\n\n**Xiang Sun***, Hybrid Equilibrium-Nonequilibrium Molecular Dynamics Approach for Two-Dimensional Solute-Pump/Solvent-Probe Spectroscopy, *J. Chem. Phys.* ([https://aip.scitation.org/doi/10.1063/1.5130926](https://aip.scitation.org/doi/10.1063/1.5130926))."
+    "content": "Our paper on 2D spectroscopy was accepted by the Journal of Chemical Physics!\n\n**Xiang Sun**, Hybrid Equilibrium-Nonequilibrium Molecular Dynamics Approach for Two-Dimensional Solute-Pump/Solvent-Probe Spectroscopy, *J. Chem. Phys.* ([https://aip.scitation.org/doi/10.1063/1.5130926](https://aip.scitation.org/doi/10.1063/1.5130926))."
   },
   {
     "title": "Hongfei Wang visits NYU Shanghai",
     "date": "2019-11-01",
-    "content": "We are glad to announce that Professor Hongfei Wang from Fudan University and Westlake University will visit NYU Shanghai on Nov. 1, 2019, and will give a seminar on “Nonlinear Vibrational Spectroscopy for Molecular Surfaces/Interfaces and Beyond” at NYU-ECNU Center for Computational Chemistry.\n\n**Abstract: **\n\nSum-frequency generation vibrational spectroscopy (SFG-VS) is a powerful surface/interface selective and sub-monolayer sensitive spectroscopic technique to interrogate the vibrational spectroscopy, structure and conformation, as well as optical activity, and vibrational dynamics of molecular surfaces and interfaces. The difficulties that have limited the application of SFG-VS to broad scientific problems regarding complex surfaces and interfaces, such as the difficulties in spectral assignment, accurate measurement and experimental as well as computational analysis of the SFG spectrum, have been mostly overcome with the recent developments. This presentation discusses recent development in SFG-VS, particularly on the development on the sub-wavenumber high resolution broadband SFG-VS (HR-BB-SFG-VS) using synchronized long picosecond and short sub-100 femtosecond laser pulses, and the future perspectives of the applications of SFG-VS to surface/interface studies and beyond.\n\n**Biography: **\n\nDr. Hongfei Wang, born in 1968, is currently a distinguished Professor of Chemistry at Department of Chemistry of Fudan University at Shanghai (2017.01-present) and Professor of School of Science at West Lake University. He obtained his B.S. degree in chemical physics from the Department of Chemical Physics of University of Science and Technology of China (USTC) at Hefei, China in 1988, and did graduate study with professor Xingxiao Ma at the same department on laser chemistry till May 1991. He then obtained his Ph.D. degree in physical chemistry at the Department of Chemistry of Columbia University in 1996 with Professor Kenneth Eisenthal. After two and half years of postdoctoral work with Professor Hai-lung Dai at the Department of Chemistry of University of Pennsylvania, jointly with DuPont Marshall Laboratory at Philadelphia, he joined the Molecular Reaction Dynamics Laboratory at the Institute of Chemistry, Chinese Academy of Sciences (ICCAS) at Beijing as a professor (1999.3-2009.6). At ICCAS he served as the director of the Molecular Reaction Dynamics Laboratory (2000-2004) and the deputy director of the State Key Laboratory of Molecular reaction Dynamics (2000-2004). He was selected into the Hundred Talent Program of the Chinese Academy Sciences (1999-2002) and was awarded the Distinguished Young Investigator Fund of the National Natural Science Foundation of China (2005-2008). In June 2009, he joined the Environmental Molecular Sciences Laboratory (EMSL) at the Pacific Northwest National Laboratory (PNNL) of the Department of Energy (DOE) in the United States as a Chief Scientist, before he joined Fudan University in January 2017. He was selected into the Thousand Talent Program (long-term) of Shanghai in 2017, and the National Thousand Talent Program (long-term) in 2018. His research has focused on structure, conformation and dynamics of molecular surfaces and interfaces using mainly surface nonlinear spectroscopy and ultrafast dynamics, such as surface second harmonic generation (SHG) and sum-frequency generation vibrational spectroscopy (SFG-VS). His main contribution is on the quantitative measurement and methodology for analysis of SHG and SFG-VS of complex molecular surfaces and interfaces, particularly in the development of systematic polarization measurement and analysis, as well as in the development of the first sub-wavenumber broadband high-resolution SFG-VS spectrometer. Professionally, he had served as the managing associated-editor of the Chinese Journal of Chemical Physics (2006-2009) and was elected as the fellow of the American Physical Society (APS fellow) in 2012."
+    "content": "We are glad to announce that Professor Hongfei Wang from Fudan University and Westlake University will visit NYU Shanghai on Nov. 1, 2019, and will give a seminar on “Nonlinear Vibrational Spectroscopy for Molecular Surfaces/Interfaces and Beyond” at NYU-ECNU Center for Computational Chemistry."
   },
   {
     "title": "Zhengqing and Xiang attend 2019 Stat Mech Symposium for Complex Systems",
@@ -496,7 +526,7 @@ items: [
   {
     "title": "Wei Zhuang visits NYU Shanghai",
     "date": "2019-09-20",
-    "content": "We are glad to announce that Professor Wei Zhuang from Fujian Institute of Research on Structure of Matters, Chinese Academy of Sciences will visit NYU Shanghai on September 20, 2019, and will give a seminar on “Investigating Water Dynamics at the Molecular Interfaces Using Dynamic Vibrational Spectroscopy” at NYU-ECNU Center for Computational Chemistry.\n\n**Abstract: **\n\nOur understanding about the state, structure and dynamics of water in the confined environments such as cytosol or electrolyte of aqueous battery remain largely limited. Dynamic vibrational spectroscopy techniques are among the most insightful tools for probing the interfacial water dynamics. The interpretation of the spectroscopy signals for these complex molecular systems, on the other hand, remains a non-trivial issue which can benefit from the theoretical modeling. We’ve therefore picked a series of typical ions, amphiphilic small molecules as well as proteins and carefully studied the water dynamics at their interfaces and the reflections on dynamic vibrational spectroscopy. Theoretical approaches including cyclic Markovian chain model are used to understand the apparently abnormal water behaviors therein. Based on these theoretical simulations, we attempt to address several important issues about the solute effect on interfacial water, including 1) ion specificity in their effects on water dynamics, 2) spatial range of solute effects, 3) micro-heterogeneity in the solutions and 4) coupling of water-protein dynamics in the jammed intercellular spaces.\n\n**Biography: **\n\nWei Zhuang graduated from the University of Science and Technology of China in 2000. He received his Ph.D. in 2007 from the University of California at Irvine under the supervision of Prof. Shaul Mukamel. From 2007 to 2009, he carried out postdoctoral research in the group of Prof. David Chandler at the University of California Berkeley. He started his independent career in 2010 at Dalian Institute of Chemical Physics, Chinese Academy of Sciences. In 2016, he moved to Fujian Institute of Research on the Structure of Matter, Chinese Academy of Sciences. His research interests lie in statistical mechanics and theoretical nonlinear spectroscopy, and more specifically focus on the theoretical studies of ion effect, water dynamics at molecular interfaces as well as ultrafast spectroscopy of solution systems."
+    "content": "We are glad to announce that Professor Wei Zhuang from Fujian Institute of Research on Structure of Matters, Chinese Academy of Sciences will visit NYU Shanghai on September 20, 2019, and will give a seminar on “Investigating Water Dynamics at the Molecular Interfaces Using Dynamic Vibrational Spectroscopy” at NYU-ECNU Center for Computational Chemistry."
   },
   {
     "title": "Xiang gives talk at Shanghai University",
@@ -506,27 +536,12 @@ items: [
   {
     "title": "Tom Miller visits us at NYU Shanghai",
     "date": "2019-08-26",
-    "content": "We are glad to announce that Professor Thomas F. Miller, III from Caltech will visit us at NYU Shanghai on August 28, 2019, and will give a seminar on “Getting Something for Nothing: Classical and Machine-Learning Methods for Quantum Simulation” at NYU-ECNU Center for Computational Chemistry. For details, see the poster attached."
-  },
-  {
-    "title": "Wen Xu joins our group, welcome!",
-    "date": "2019-08-23",
-    "content": "Dr. Wen Xu joins our group as a Research Consultant. Welcome!"
+    "content": "We are glad to announce that Professor Thomas F. Miller, III from Caltech will visit us at NYU Shanghai on August 28, 2019, and will give a seminar on “Getting Something for Nothing: Classical and Machine-Learning Methods for Quantum Simulation” at NYU-ECNU Center for Computational Chemistry. "
   },
   {
     "title": "We got funded by NSFC",
     "date": "2019-08-19",
-    "content": "Our research group got funded by National Natural Science Foundation of China (NSFC), grant number 21903054."
-  },
-  {
-    "title": "Group photo shooting day",
-    "date": "2019-08-12",
-    "content": ""
-  },
-  {
-    "title": "Chen Xie joins our group, welcome!",
-    "date": "2019-08-07",
-    "content": "Mr. Chen Xie joins our group as a Research Associate starting this Fall. Welcome!"
+    "content": "Our research group got funded by National Natural Science Foundation of China (NSFC), Young Scientists Research Fund, grant number 21903054."
   },
   {
     "title": "Our paper on Luminescent Materials accepted by J. Mater. Chem. C",
@@ -554,24 +569,9 @@ items: [
     "content": "Xiang gives an invited talk on Linearized Path Integral Methods at California Institute of Technology, Pasadena, CA.\n\nHost: Thomas F. Miller, III."
   },
   {
-    "title": "Jiebo Li visits NYU Shanghai",
-    "date": "2019-06-05",
-    "content": "Prof. Jiebo Li from Beihang University (BUAA), and Beijing Biomedical Engineering Innovation Center visits NYU Shanghai and gives a seminar talk at the Center for Computational Chemistry at NYU Shanghai on June 5, 2019. The title of his talk is\n\n**Interfacial Energy Conversion and Migration on Nanomaterials**\n\nFurther information can be found [https://research.shanghai.nyu.edu/centers-and-institutes/chemistry/events/interfacial-energy-conversion-and-migration-nanomaterials](https://research.shanghai.nyu.edu/centers-and-institutes/chemistry/events/interfacial-energy-conversion-and-migration-nanomaterials)"
-  },
-  {
     "title": "Xiang presents at Symposium of Quantum Effects in Chemistry and Biology",
     "date": "2019-06-03",
     "content": "Xiang gives a talk on photoinduced charge transfer at the International Symposium of Quantum Effects in Chemistry and Biology, NYU Shanghai June 1-3, 2019."
-  },
-  {
-    "title": "Qiantan Campus Ground-Breaking Ceremony",
-    "date": "2019-05-30",
-    "content": "NYU Shanghai new Qiantan campus ground-breaking ceremony is held on May 30, 2019!"
-  },
-  {
-    "title": "100TB Storage Node arrived",
-    "date": "2019-05-20",
-    "content": "Our newly purchased 100TB storage node has arrived and up running. Location in NYU Shanghai HPC is **/xspace2**."
   },
   {
     "title": "Xiang received Grants from STCSM and SMEC",
@@ -586,7 +586,7 @@ items: [
   {
     "title": "Xiang gives STEM seminar",
     "date": "2019-04-15",
-    "content": "Xiang gives a STEMinar talk on **“What Do We See in Ultrafast Spectroscopy of Liquids?”**\n\nThe seminar is scheduled for** 4:30-5:30 PM, Wednesday, April 17 in Room 310, Pudong**. Please also note that tea and coffee reception will start at 4:00 PM. VC will be ready in Room 375, Geo Building, Zhongbei Campus.\n\n**Abstract of the Talk:**\n\nThe advancement of ultrafast laser techniques enables scientists to track molecular movements in real time, just like taking a series of snapshots with superfast shutter speed (compare with a femtosecond or 10^-15 second). However, shooting a movie of all the molecules in a bulk liquid solution is not possible experimentally (which is possible in computer simulations), in fact, one can only focus on a few important motions. In this talk, I will introduce the concept of using ultrafast spectroscopy to study solvation dynamics, which is a relaxation process of the solvent after exciting the solute by a laser pulse. The traditional approach of studying solvation dynamics is called time-dependent fluorescence spectroscopy, which reports the evolution of solute’s emitted fluorescence. Still, one has to infer the changes in solvent structure from the concomitant evolution of the solute-solvent interaction energy. With the method we developed, it is now possible to measure directly how the solvent dynamics can be affected by electronically excitation of the solute. Combining laser excitation of solute with light scattering, we can follow the solvent structural dynamics via novel solute-pump/solvent-probe spectroscopy. From computer simulations of these spectra, we show that one can learn about local solvent structural changes near the newly excited solute.\n\n*Postdocs, students and your visitors are welcome also. *We look forward to seeing you there."
+    "content": "Xiang gives a STEMinar talk on **“What Do We See in Ultrafast Spectroscopy of Liquids?”**\n\nThe seminar is scheduled for** 4:30-5:30 PM, Wednesday, April 17 in Room 310, Pudong**. Please also note that tea and coffee reception will start at 4:00 PM. VC will be ready in Room 375, Geo Building, Zhongbei Campus.\n\n**Abstract of the Talk:**\n\nThe advancement of ultrafast laser techniques enables scientists to track molecular movements in real time, just like taking a series of snapshots with superfast shutter speed (compare with a femtosecond or 10^-15 second). However, shooting a movie of all the molecules in a bulk liquid solution is not possible experimentally (which is possible in computer simulations), in fact, one can only focus on a few important motions. In this talk, I will introduce the concept of using ultrafast spectroscopy to study solvation dynamics, which is a relaxation process of the solvent after exciting the solute by a laser pulse. The traditional approach of studying solvation dynamics is called time-dependent fluorescence spectroscopy, which reports the evolution of solute’s emitted fluorescence. Still, one has to infer the changes in solvent structure from the concomitant evolution of the solute-solvent interaction energy. With the method we developed, it is now possible to measure directly how the solvent dynamics can be affected by electronically excitation of the solute. Combining laser excitation of solute with light scattering, we can follow the solvent structural dynamics via novel solute-pump/solvent-probe spectroscopy. From computer simulations of these spectra, we show that one can learn about local solvent structural changes near the newly excited solute.\n\n Postdocs, students and your visitors are welcome also. We look forward to seeing you there."
   },
   {
     "title": "Richard Stratt visits NYU Shanghai",
@@ -599,39 +599,14 @@ items: [
     "content": "Xiang gives an invited talk on charge transfer dynamics at the Department of Physics, University of Houston.\n\nHost: Margaret Cheung."
   },
   {
-    "title": "Happy Chinese new year!",
-    "date": "2019-02-05",
-    "content": "As the new sun rises in a brand New Year may it bring you good luck, prosperity, joy, and contentment.\n\nThe Sun group at NYU Shanghai wishes everyone Happy New Year!"
-  },
-  {
     "title": "Our 544-core HPC nodes ready",
     "date": "2019-02-01",
     "content": "Update, with another purchase of 8 nodes of 2x Intel Xeon Scalable Gold 6132 (14 cores, 2.6 GHz, 19.25 MB Cache). We now have a total of 544 cores from Intel Xeon CPUs. — Feb 2019\n\n————\n\nNov 2018:\n\nOur first batch of HPC compute nodes arrived. This batch of purchase includes 8 blade nodes, each node has 2x Intel Xeon Scalable Gold 6132 (14 cores, 2.6 GHz, 19.25 MB Cache) as well as 4 rack-server nodes, each node has 2x Intel Xeon Scalable Gold 6146 (12 cores, 3.2 GHz, 24.75 MB Cache). Each node has 12x 16GB DDR4 2666MHz Memory, and 2x 480GB SSD with Raid 1 Hard Drive, 40GB Network.\n\nIn addition, we also ordered a storage node with 2x Intel Xeon Silver 4114 (20 cores, 2.2GHz, 13.75MB Cache), 64GB Memory, 2x 480GB SSD system drive, and 10x 8TB Hard Drive, with 10GB Network.\n\nOur group’s nodes have been added to the HPC at NYU Shanghai, for details of usage see\n\n[https://sites.google.com/a/nyu.edu/hpc-nyush/](https://sites.google.com/a/nyu.edu/hpc-nyush/)"
   },
   {
-    "title": "Welcome rotation students, Amiel and Willmor!",
-    "date": "2019-01-23",
-    "content": "NYU Shanghai PhD rotation students Amiel Paz and Willmor Pena join our lab, welcome!"
-  },
-  {
-    "title": "Xiang’s JCP paper on GQME is online now",
-    "date": "2019-01-19",
-    "content": "### A modified approach for simulating electronically nonadiabatic dynamics via the generalized quantum master equation\n\nJ. Chem. Phys. **150**, 034101 (2019); [https://doi.org/10.1063/1.5055756](https://doi.org/10.1063/1.5055756)\n\nEllen Mulvihill^1*, *http://orcid.org/0000-0002-8560-6436 Alexander Schubert^1,2^,^a)*, *http://orcid.org/0000-0002-2846-8532 Xiang Sun^1^,^b)*, *http://orcid.org/0000-0002-6982-8995 Barry D. Dunietz^2*, and *http://orcid.org/0000-0002-7935-4586 Eitan Geva^1^,^c)"
-  },
-  {
     "title": "Xiang presents at 2018 StatMech Symposium for Complex Systems",
     "date": "2018-12-09",
     "content": "Xiang presents at 2018 Statistical Mechanics Symposium for Complex Systems.\n\nOrganizers: Weixue Li, YiJing Yan, Jun Jiang, Bin Jiang, Xiao Zheng of USTC.\n\n[https://scms.ustc.edu.cn/2018/1206/c2403a361235/page.htm](https://scms.ustc.edu.cn/2018/1206/c2403a361235/page.htm)"
-  },
-  {
-    "title": "Alex MacKerell visits NYU Shanghai",
-    "date": "2018-10-30",
-    "content": "Prof. Alex MacKerell of the University of Maryland, Baltimore visits NYU Shanghai and gives a talk on “Electronic Polarization in Macromolecular Structure and Dynamics: Development and Application of the Drude Polarizable Force Field”.\n\n[https://research.shanghai.nyu.edu/centers-and-institutes/chemistry/events/electronic-polarization-macromolecular-structure-and](https://research.shanghai.nyu.edu/centers-and-institutes/chemistry/events/electronic-polarization-macromolecular-structure-and)"
-  },
-  {
-    "title": "Xiaoge Su joins our group, welcome!",
-    "date": "2018-10-10",
-    "content": "Mr. Xiaoge Su joins our group as a Research Consultant. Welcome!"
   },
   {
     "title": "Our work on charge transfer shows on NYU Shanghai research news",
@@ -649,20 +624,15 @@ items: [
     "content": "Our collaborator Prof. Guoqing Zhang of USTC visits NYU Shanghai and gives a fascinating talk about Organic Room-Temperature Phosphorescent Materials at the NYU-ECNU Center for Computational Chemistry.\n\n[https://research.shanghai.nyu.edu/centers-and-institutes/chemistry/events/purely-organic-room-temperature-phosphorescent-materials](https://research.shanghai.nyu.edu/centers-and-institutes/chemistry/events/purely-organic-room-temperature-phosphorescent-materials)"
   },
   {
-    "title": "Xiang presents an invited talk at 1st BNLMS symposium of theoretical and computational chemistry",
-    "date": "2018-08-06",
-    "content": "Xiang presents an invited talk at the 1st Beijing National Laboratory for Molecular Sciences (BNLMS) symposium of theoretical and computational chemistry at Peking University, August 4-6, 2018.\n\n[http://old.chem.pku.edu.cn/liujian/BNLMS/program.html](http://old.chem.pku.edu.cn/liujian/BNLMS/program.html)"
-  },
-  {
     "title": "Accepting undergraduate and graduate students",
-    "date": "2018-08-02",
+    "date": "2018-09-01",
     "content": "Our group is now accepting applications for undergraduate and graduate research assistants, please email xiang.sun@nyu.edu for more information. Selected students will have the chance to work on research projects with the possibility of publications."
   },
   {
-    "title": "Now accepting student internship",
-    "date": "2018-03-31",
-    "content": "Our group is now accepting applications for the Student Research Program in Molecular Science (SRPMS) of NYU Shanghai at [https://www.srpms-nyush.org/](https://www.srpms-nyush.org/). This is a flexible 3 to 6 months scholarship / internship that covers travel and living cost in Shanghai."
-  }
+    "title": "Xiang presents an invited talk at 1st BNLMS symposium of theoretical and computational chemistry",
+    "date": "2018-08-06",
+    "content": "Xiang presents an invited talk at the 1st Beijing National Laboratory for Molecular Sciences (BNLMS) symposium of theoretical and computational chemistry at Peking University, August 4-6, 2018."
+  },
 ]
 ---
 

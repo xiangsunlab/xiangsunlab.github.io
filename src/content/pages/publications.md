@@ -39,6 +39,17 @@ profiles: [
 ]
 publications: [
   {
+    "number": 54,
+    "year": "2026",
+    "authors": "Zailing Song, Zengkui Liu, Fei Xia, Yuwei Zhang*, Xiang Sun*",
+    "title": "Coarse-Grained Nonadiabatic Dynamics in Disordered Condensed Phase",
+    "journalName": "Under Review",
+    "volume": "",
+    "locator": "",
+    "image": "/web-pics/paper-54-toc.png",
+    "imageAlt": "Illustration of reaction-coordinate models for open quantum systems"
+  },
+  {
     "number": 53,
     "year": "2026",
     "authors": "Hao Zeng, Xiang Sun*",
@@ -60,7 +71,6 @@ publications: [
     "volume": "164",
     "locator": "224117 (2026).",
     "doiUrl": "https://doi.org/10.1063/5.0325277",
-    "newsUrl": "/news/",
     "specialIssue": "Jianshu Cao Festschrift",
     "specialIssueUrl": "https://publishing.aip.org/publications/journals/special-topics/jcp/festschrift-in-honor-of-jianshu-cao-non-equilibrium-kinetics-and-quantum-dynamics/",
     "image": "/web-pics/paper-52-toc.png",
@@ -107,7 +117,6 @@ publications: [
     "volume": "2",
     "locator": "016107 (2026).",
     "doiUrl": "https://doi.org/10.1063/5.0320468",
-    "pdfUrl": "https://pubs.aip.org/aip/aco/article-pdf/doi/10.1063/5.0320468/20912444/016107_1_5.0320468.pdf",
     "image": "/web-pics/paper-49-toc.png",
     "imageAlt": "Illustration of condensed-phase spectroscopy"
   },
