@@ -16,11 +16,6 @@ items: [
     "content": "Xiang gives a talk on Semiclassical Methods for Photoinduced Charge Transfer in the Path Integral Quantum Mechanics in the Era of Machine Learning (PIQM 2026), CECAM Flagship School, July 19-23, 2026 at Shanghai, China.",
   },
   {
-    "title": "Welcome Jiarui to our group!",
-    "date": "2026-07-15",
-    "content": "Please join me in welcoming SRPMS summer intern Jiarui to our group! Hope to work together and make scientific progress!"
-  },
-  {
     "title": "Hao’s paper on memory time estimation in GQME and TTM is accepted by JCP!",
     "date": "2026-05-21",
     "content": "Congrats, Hao’s paper on memory time estimation in GQME and TTM has been accepted by JCP!\n\n- Hao Zeng, Xiang Sun, [Estimating Memory Time within the Frameworks of Generalized Quantum Master Equation and Transfer Tensor Methods](https://doi.org/10.1063/5.0325277), *J. Chem. Phys.* (DOI: 10.1063/5.0325277)",
