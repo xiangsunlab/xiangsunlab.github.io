@@ -2,19 +2,55 @@
 import InnerPage from "../components/InnerPage.astro";
 import { getPageData } from "../data/pages";
 import { parseInlineMarkdown, stripMarkdown } from "../utils/markdown";
+import { existsSync } from "node:fs";
+import { join } from "node:path";
 
 const page = await getPageData("publications");
 const publications = page.publications;
 const sortedPublications = [...publications].sort((a, b) => b.number - a.number);
+const sectionBreaks = page.sectionBreaks ?? [];
 
-const resourcesFor = (publication: any) => [
-  publication.pdfUrl && { label: page.labels.pdf, href: publication.pdfUrl },
-  publication.doiUrl && { label: page.labels.doi, href: publication.doiUrl },
-  !publication.doiUrl && publication.articleUrl && { label: page.labels.article, href: publication.articleUrl },
-  publication.preprintUrl && { label: page.labels.preprint, href: publication.preprintUrl },
-  publication.newsUrl && { label: page.labels.news, href: publication.newsUrl },
-  publication.typoUrl && { label: page.labels.typo, href: publication.typoUrl },
-].filter(Boolean) as { label: string; href: string }[];
+type PublicationResource = {
+  kind: string;
+  label: string;
+  href: string;
+  download?: boolean;
+  external?: boolean;
+};
+
+const localPdfUrlFor = (publicationNumber: number, suffix: "full" | "typo") => {
+  const pdfFileName = `${publicationNumber}-${suffix}.pdf`;
+  const candidates = [{ filePath: join(process.cwd(), "public", "pdfs", pdfFileName), url: `/pdfs/${pdfFileName}` }];
+
+  return candidates.find((candidate) => existsSync(candidate.filePath))?.url;
+};
+
+const resourcesFor = (publication: any) => {
+  const fullPdfUrl = publication.pdfUrl ?? localPdfUrlFor(publication.number, "full");
+  const typoUrl = publication.typoUrl ?? localPdfUrlFor(publication.number, "typo");
+
+  return [
+  fullPdfUrl && {
+    kind: "pdf",
+    label: page.labels.pdf,
+    href: fullPdfUrl,
+    download: !publication.pdfUrl,
+    external: !!publication.pdfUrl,
+  },
+  !publication.doiUrl && publication.articleUrl && { kind: "article", label: page.labels.article, href: publication.articleUrl, external: true },
+  publication.preprintUrl && { kind: "preprint", label: page.labels.preprint, href: publication.preprintUrl, external: true },
+  typoUrl && {
+    kind: "typo",
+    label: page.labels.typo,
+    href: typoUrl,
+    download: !(publication.typoUrl ?? "").startsWith("http"),
+    external: (publication.typoUrl ?? "").startsWith("http"),
+  },
+  publication.errataUrl && { kind: "errata", label: page.labels.errata, href: publication.errataUrl, external: true },
+  publication.doiUrl && { kind: "doi", label: page.labels.doi, href: publication.doiUrl, external: true },
+  publication.newsUrl && { kind: "news", label: page.labels.news, href: publication.newsUrl },
+].filter(Boolean) as PublicationResource[];
+};
 ---
 
 <InnerPage
@@ -35,10 +71,17 @@ const resourcesFor = (publication: any) => [
   <ol class="publication-list" reversed start={sortedPublications[0]?.number}>
     {sortedPublications.map((publication, index) => {
       const resources = resourcesFor(publication);
+      const sectionBreak = sectionBreaks.find((breakItem) => breakItem.beforePublicationNumber === publication.number);
 
       return (
-        <li value={publication.number} data-reveal="soft" style={`--reveal-delay: ${(index % 3) * 60}ms`}>
-          <article>
+        <>
+          {sectionBreak && (
+            <li class="publication-section-break" data-reveal="soft">
+              <h2>{sectionBreak.title}</h2>
+            </li>
+          )}
+          <li value={publication.number} data-reveal="soft" style={`--reveal-delay: ${(index % 3) * 60}ms`}>
+            <article>
             <div class="publication-aside">
               <span class="publication-number" aria-label={`${page.labels.publicationAria} ${publication.number}`}>
                 {String(publication.number).padStart(2, "0")}
@@ -80,8 +123,15 @@ const resourcesFor = (publication: any) => [
                 {resources.length > 0 && (
                   <div class="resource-links" aria-label={`${page.labels.resourcesAria} ${stripMarkdown(publication.title)}`}>
                     {resources.map((resource) => (
-                      <a href={resource.href} target="_blank" rel="noreferrer">
-                        {resource.label}<span aria-hidden="true">↗</span>
+                      <a
+                        class={`resource-link resource-link--${resource.kind}`}
+                        href={resource.href}
+                        target={resource.external ? "_blank" : undefined}
+                        rel={resource.external ? "noreferrer" : undefined}
+                        download={resource.download ? "" : undefined}
+                      >
+                        {resource.label}
+                        <span aria-hidden="true">{resource.external ? "↗" : "↓"}</span>
                       </a>
                     ))}
                   </div>
@@ -109,8 +159,9 @@ const resourcesFor = (publication: any) => [
                 </div>
               )}
             </div>
-          </article>
-        </li>
+            </article>
+          </li>
+        </>
       );
     })}
   </ol>
@@ -154,6 +205,19 @@ const resourcesFor = (publication: any) => [
 
   .publication-list li {
     margin: 0;
+  }
+
+  .publication-section-break {
+    padding: 0.5rem 1rem 0.25rem;
+  }
+
+  .publication-section-break h2 {
+    margin: 0;
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-size: clamp(1.08rem, 1.4vw, 1.25rem);
+    font-weight: 600;
+    line-height: 1.18;
   }
 
   article {
@@ -300,7 +364,7 @@ const resourcesFor = (publication: any) => [
 
   .citation {
     margin: 0;
-    flex: 1 1 12rem;
+    flex: 1 1 auto;
     color: var(--color-ink);
     font-size: clamp(0.94rem, 1.2vw, 1rem);
     font-weight: 550;
@@ -316,10 +380,15 @@ const resourcesFor = (publication: any) => [
 
   .resource-links {
     display: flex;
-    flex: 0 1 auto;
+    flex: 0 0 auto;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 0;
+    gap: 1ch;
+    margin-left: auto;
+    justify-content: flex-end;
+  }
+
+  .resource-link--doi {
+    margin-left: 0;
   }
 
   .resource-links a {

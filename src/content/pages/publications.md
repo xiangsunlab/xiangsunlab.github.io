@@ -12,6 +12,12 @@ publicationTypes: [
   "Correction",
   "Book"
 ]
+sectionBreaks: [
+  {
+    "beforePublicationNumber": 10,
+    "title": "Before joining NYU Shanghai:"
+  }
+]
 labels: {
   "pdf": "PDF",
   "doi": "DOI",
@@ -19,6 +25,7 @@ labels: {
   "preprint": "Preprint",
   "news": "News",
   "typo": "Typo",
+  "errata": "Errata",
   "underReview": "Under Review",
   "specialIssue": "Special Issue",
   "award": "Award",
@@ -70,6 +77,7 @@ publications: [
     "journalName": "J. Chem. Phys.",
     "volume": "164",
     "locator": "224117 (2026).",
+    "preprintUrl": "https://doi.org/10.26434/chemrxiv.15003378/v2",
     "doiUrl": "https://doi.org/10.1063/5.0325277",
     "specialIssue": "Jianshu Cao Festschrift",
     "specialIssueUrl": "https://publishing.aip.org/publications/journals/special-topics/jcp/festschrift-in-honor-of-jianshu-cao-non-equilibrium-kinetics-and-quantum-dynamics/",
@@ -202,6 +210,7 @@ publications: [
     "journalName": "J. Chem. Theory Comput.",
     "volume": "20",
     "locator": "9832–9848 (2024).",
+    "preprintUrl": "https://doi.org/10.26434/chemrxiv-2024-qns7q",
     "doiUrl": "https://doi.org/10.1021/acs.jctc.4c01223",
     "image": "/web-pics/paper-43-toc.png",
     "imageAlt": "Illustration of neural-network nonadiabatic dynamics"
@@ -295,6 +304,7 @@ publications: [
     "journalName": "J. Chem. Phys.",
     "volume": "160",
     "locator": "034108 (2024).",
+    "preprintUrl": "https://doi.org/10.26434/chemrxiv-2023-kw15q",
     "doiUrl": "https://doi.org/10.1063/5.0185076",
     "image": "/web-pics/paper-36-toc.png",
     "imageAlt": "Illustration of multistate electronic-transition theory"
@@ -387,6 +397,7 @@ publications: [
     "journalName": "J. Chem. Phys.",
     "volume": "155",
     "locator": "224104 (2021).",
+    "preprintUrl": "https://doi.org/10.26434/chemrxiv-2021-bfr9f",
     "doiUrl": "https://doi.org/10.1063/5.0073689",
     "image": "/web-pics/paper-29-toc.png",
     "imageAlt": "Illustration of machine-learning forecasts of nonadiabatic dynamics"
@@ -400,6 +411,7 @@ publications: [
     "journalName": "J. Phys. Chem. B",
     "volume": "125",
     "locator": "13267–13278 (2021).",
+    "preprintUrl": "https://doi.org/10.26434/chemrxiv-2021-fmlzp",
     "doiUrl": "https://doi.org/10.1021/acs.jpcb.1c08260",
     "image": "/web-pics/paper-28-toc.png",
     "imageAlt": "Illustration of a machine-learning charge-transfer landscape"
@@ -506,6 +518,7 @@ publications: [
     "journalName": "J. Phys. Chem. B",
     "volume": "124",
     "locator": "9579–9591 (2020).",
+    "preprintUrl": "https://doi.org/10.26434/chemrxiv.12519485.v2",
     "doiUrl": "https://doi.org/10.1021/acs.jpcb.0c06306",
     "image": "/web-pics/paper-20-toc.png",
     "imageAlt": "Illustration of charge transfer in a carotenoid porphyrin C60 triad"
@@ -535,7 +548,7 @@ publications: [
     "doiUrl": "https://doi.org/10.1063/5.0016160",
     "specialIssue": "65 Years of Electron Transfer",
     "specialIssueUrl": "https://pubs.aip.org/collection/1326/65-Years-of-Electron-Transfer",
-    "typoUrl": "https://doi.org/10.1063/5.0028384",
+    "errataUrl": "https://doi.org/10.1063/5.0028384",
     "image": "/web-pics/paper-18-toc.png",
     "imageAlt": "Illustration of charge-transfer rates in a molecular triad"
   },

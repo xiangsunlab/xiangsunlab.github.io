@@ -89,8 +89,8 @@ groups: [
       },
       {
         "name": "Hao Zeng",
-        "role": "Master's Student, N.E.T. Program",
-        "education": "B.S., East China Normal University",
+        "role": "PhD Student",
+        "education": "M.S. & B.S., East China Normal University",
         "orcidUrl": "https://orcid.org/0009-0001-8584-8718",
         "project": "Quantum dynamics and machine learning",
         "image": "/web-pics/people-hao-zeng.jpg"
