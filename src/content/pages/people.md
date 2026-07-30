@@ -32,6 +32,11 @@ groups: [
           },
           {
             "prefix": "Faculty, ",
+            "label": "NYU–ECNU Institute of Physics at NYU Shanghai",
+            "url": "https://research.shanghai.nyu.edu/physics"
+          },
+          {
+            "prefix": "Faculty, ",
             "label": "Center for Data Science at NYU Shanghai",
             "url": "https://dail.shanghai.nyu.edu/"
           },
