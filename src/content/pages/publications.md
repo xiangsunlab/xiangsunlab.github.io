@@ -80,7 +80,7 @@ publications: [
     "preprintUrl": "https://doi.org/10.26434/chemrxiv.15003378/v2",
     "doiUrl": "https://doi.org/10.1063/5.0325277",
     "specialIssue": "Jianshu Cao Festschrift",
-    "specialIssueUrl": "https://publishing.aip.org/publications/journals/special-topics/jcp/festschrift-in-honor-of-jianshu-cao-non-equilibrium-kinetics-and-quantum-dynamics/",
+    "specialIssueUrl": "https://pubs.aip.org/jcp/collection/660016/Festschrift-in-honor-of-Jianshu-Cao-Non",
     "image": "/web-pics/paper-52-toc.png",
     "imageAlt": "Illustration of quantum dynamical models and memory effects"
   },
@@ -169,7 +169,7 @@ publications: [
     "locator": "024131 (2025).",
     "doiUrl": "https://doi.org/10.1063/5.0276946",
     "specialIssue": "Yijing Yan Festschrift",
-    "specialIssueUrl": "https://publishing.aip.org/publications/journals/special-topics/jcp/yijing-yan-festschrift/",
+    "specialIssueUrl": "https://pubs.aip.org/collection/577653/Yijing-Yan-Festschrift",
     "image": "/web-pics/paper-46-toc.png",
     "imageAlt": "Illustration of multistate quantum dynamics"
   },
@@ -180,10 +180,11 @@ publications: [
     "authors": "Hao Zeng, Yitian Kou, Xiang Sun*",
     "title": "Physics-Informed Neural Networks for Quantum Propagators in Wavepacket Dynamics",
     "journalName": "Mol. Phys.",
-    "volume": "",
-    "locator": "DOI: 10.1080/00268976.2025.2501775.",
+    "volume": "124",
+    "locator": "e2501775 (2026).",
     "doiUrl": "https://doi.org/10.1080/00268976.2025.2501775",
     "specialIssue": "Zlatko Bačić Festschrift",
+    "specialIssueUrl": "https://www.tandfonline.com/toc/tmph20/124/9-10",
     "image": "/web-pics/paper-45-toc.png",
     "imageAlt": "Illustration of neural-network quantum wavepacket dynamics"
   },
@@ -346,6 +347,7 @@ publications: [
     "locator": "9271–9287 (2022).",
     "doiUrl": "https://doi.org/10.1021/acs.jpcb.2c06605",
     "specialIssue": "Early-Career and Emerging Researchers in Physical Chemistry, Volume 2",
+    "specialIssueUrl": "https://pubs.acs.org/collection/319/Early-Career-and-Emerging-Researchers-in-Physical",
     "image": "/web-pics/paper-33-toc.png",
     "imageAlt": "Illustration of energy transfer in a protein environment"
   },
