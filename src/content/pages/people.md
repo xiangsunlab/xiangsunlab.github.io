@@ -107,7 +107,7 @@ groups: [
         "orcidUrl": "",
         "project": "Ultrafast spectroscopy of liquids",
         "image": "/web-pics/people-shurun-liu.jpg"
-      }
+      },
       {
         "name": "Zailing Song",
         "role": "Master's Student",
