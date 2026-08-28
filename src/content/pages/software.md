@@ -9,9 +9,12 @@ projects: [
     "status": "Released",
     "description": "A Python Package for Calculating Condensed-Phase Charge-Transfer Rates from Marcus Theory to Fermi's Golden Rule.",
     "topics": [
-      "Charge transfer",
-      "Python",
-      "Molecular simulation"
+      "Charge Transfer",
+      "Marcus Theory",
+      "Fermi's Golden Rule",
+      "Instantaneous Marcus Theory",
+      "Multistate Harmonic Model",
+      "Atomistic Simulation",
     ],
     "publication": "Z. Liu, D. Brian, and X. Sun, _J. Chem. Phys._ **161**, 064101 (2024).",
     "doiUrl": "https://doi.org/10.1063/5.0224524",
@@ -26,11 +29,12 @@ projects: [
       "Semiclassical Methods",
       "Mixed Quantum-Classical Methods",
       "Spectroscopy",
-      "Condensed Phase"
+      "Atomistic Simulation",
+      "Condensed Phase",
     ],
     "publication": "Citation information and software links will be added when QCDyn is released.",
     #"doiUrl": "https://doi.org/10.1063/5.0224524",
-    #"softwareUrl": "https://github.com/ctramer/PyCTRAMER"
+    #"softwareUrl": "https://github.com/xiangsunlab/QCDyn"
   }
 ]
 ---

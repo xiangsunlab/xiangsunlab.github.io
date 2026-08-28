@@ -54,7 +54,7 @@ publications: [
     "volume": "",
     "locator": "",
     "image": "/web-pics/paper-54-toc.png",
-    "imageAlt": "Illustration of reaction-coordinate models for open quantum systems"
+    "imageAlt": "Illustration of coarse-grained nonadiabatic dynamics"
   },
   {
     "number": 53,
@@ -64,8 +64,9 @@ publications: [
     "journalName": "Under Review",
     "volume": "",
     "locator": "",
+    "preprintUrl": "https://doi.org/10.26434/chemrxiv.15007616/v1",
     "image": "/web-pics/paper-53-toc.png",
-    "imageAlt": "Illustration of reaction-coordinate models for open quantum systems"
+    "imageAlt": "Illustration of multistate model"
   },
   {
     "number": 52,

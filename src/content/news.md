@@ -11,14 +11,29 @@ labels: {
 }
 items: [
   {
+    "title": "Zengkui receives Inaugural NYU Shanghai Outstanding PhD Dissertation Award!",
+    "date": "2026-08-28",
+    "content": "Zengkui on receiving the Inaugural NYU Shanghai Outstanding PhD Dissertation Award! In recognition of his brilliant work, he will each receive a monetary prize of RMB 5,000, along with a formal certificate commemorating this inaugural honor.",
+  },
+  {
     "title": "Xiang gives invited talk in Path Integral Quantum Mechanics, CECAM Flagship School",
     "date": "2026-07-21",
     "content": "Xiang gives a talk on Semiclassical Methods for Photoinduced Charge Transfer in the Path Integral Quantum Mechanics in the Era of Machine Learning (PIQM 2026), CECAM Flagship School, July 19-23, 2026 at Shanghai, China.",
   },
   {
+    "title": "Welcome summer researcher Jiarui!",
+    "date": "2026-07-15",
+    "content": "We are pleased to welcome Jiarui Chang to our group for a summer research project. We look forward to having Jiarui join the team and contribute to our ongoing research. Welcome!"
+  },
+  {
     "title": "Hao’s paper on memory time estimation in GQME and TTM is accepted by JCP!",
     "date": "2026-05-21",
     "content": "Congrats, Hao’s paper on memory time estimation in GQME and TTM has been accepted by JCP!\n\n- Hao Zeng, Xiang Sun, [Estimating Memory Time within the Frameworks of Generalized Quantum Master Equation and Transfer Tensor Methods](https://doi.org/10.1063/5.0325277), *J. Chem. Phys.* (DOI: 10.1063/5.0325277)",
+  },
+  {
+    "title": "Hao receives 2025 and 2026 N.E.T. Research Excellence Award!",
+    "date": "2026-05-08",
+    "content": "Congrats, Hao on receiving the 2025 and 2026 N.E.T. Research Excellence Award! [N.E.T. program](https://netprogram.shanghai.nyu.edu/) is our NYU Shanghai - ECNU Joint Graduate Training Program. The award provides awardee a prize of RMB 12,000 (pre-tax). There is a related newspiece [Advancing Methods for Quantum Dynamics Research](https://netprogram.shanghai.nyu.edu/en/advancing-methods-quantum-dynamics-research) on NYU Shanghai website.",
   },
   {
     "title": "Xiang received tenure and promotion to Associate Professor of Chemistry and Physics!",

@@ -77,14 +77,6 @@ groups: [
         "image": "/web-pics/people-jialong-wang.jpg"
       },
       {
-        "name": "Zailing Song",
-        "role": "PhD Student",
-        "education": "M.S., Zhejiang A&F University",
-        "orcidUrl": "https://orcid.org/0009-0000-2632-3148",
-        "project": "Charge transfer in organic photovoltaics",
-        "image": "/web-pics/people-zailing-song.jpg"
-      },
-      {
         "name": "Zihan Zou",
         "role": "PhD Student",
         "education": "B.S., Qilu University of Technology",
@@ -116,6 +108,14 @@ groups: [
         "project": "Ultrafast spectroscopy of liquids",
         "image": "/web-pics/people-shurun-liu.jpg"
       }
+      {
+        "name": "Zailing Song",
+        "role": "Master's Student",
+        "education": "M.S., Zhejiang A&F University",
+        "orcidUrl": "https://orcid.org/0009-0000-2632-3148",
+        "project": "Charge transfer in organic photovoltaics",
+        "image": "/web-pics/people-zailing-song.jpg"
+      },
     ]
   },
   {

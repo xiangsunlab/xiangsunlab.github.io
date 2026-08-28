@@ -55,10 +55,14 @@ education: [
   ]
 ]
 experience: [
-  "Assistant Professor of Chemistry, New York University Shanghai, Shanghai, China, 2018–present",
+  "Associate Professor of Chemistry and Physics, New York University Shanghai, Shanghai, China, 2026–present",
+  "Global Network Associate Professor, Department of Chemistry, New York University, 2026–present",
+  "Adjunct Professor, School of Physics, East China Normal University, 2026–present",
+  "Faculty Member, NYU–ECNU Institute of Physics at NYU Shanghai, 2026–present",
   "Faculty Member, NYU–ECNU Center for Computational Chemistry at NYU Shanghai, 2018–present",
-  "Global Network Assistant Professor of Chemistry, Department of Chemistry, New York University, 2019–present",
-  "Adjunct Associate Professor, State Key Laboratory of Precision Spectroscopy, East China Normal University, 2019–present",
+  "Assistant Professor of Chemistry, New York University Shanghai, Shanghai, China, 2018–2026",
+  "Global Network Assistant Professor of Chemistry, Department of Chemistry, New York University, 2019–2026",
+  "Adjunct Associate Professor, State Key Laboratory of Precision Spectroscopy, East China Normal University, 2019–2026",
   "Visiting Scholar, Department of Chemistry and Biochemistry, University of California, San Diego, 2018. Host: Francesco Paesani",
   "Postdoctoral Research Fellow, Department of Chemistry, University of Michigan, 2014–2017. Advisor: Eitan Geva",
   "Research Consultant, Department of Chemistry, Colorado State University, 2013 and 2014. Advisor: Branka M. Ladanyi",
