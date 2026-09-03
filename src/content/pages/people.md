@@ -96,7 +96,7 @@ groups: [
         "name": "Shurun Liu",
         "role": "Master's Student, N.E.T. Program",
         "education": "B.S., Wuhan University of Technology",
-        "orcidUrl": "",
+        "orcidUrl": "https://orcid.org/0009-0002-9764-4015",
         "project": "Ultrafast spectroscopy of liquids",
         "image": "/web-pics/people-shurun-liu.jpg"
       },
