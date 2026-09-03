@@ -45,19 +45,8 @@ profiles: [
   }
 ]
 publications: [
-  {
+    {
     "number": 54,
-    "year": "2026",
-    "authors": "Zailing Song, Zengkui Liu, Fei Xia, Yuwei Zhang*, Xiang Sun*",
-    "title": "Coarse-Grained Nonadiabatic Dynamics in Disordered Condensed Phase",
-    "journalName": "Under Review",
-    "volume": "",
-    "locator": "",
-    "image": "/web-pics/paper-54-toc.png",
-    "imageAlt": "Illustration of coarse-grained nonadiabatic dynamics"
-  },
-  {
-    "number": 53,
     "year": "2026",
     "authors": "Hao Zeng, Xiang Sun*",
     "title": "Multilayer Multistate Reaction Coordinate Model for Nonadiabatic Dynamics in Open Quantum Systems",
@@ -67,6 +56,17 @@ publications: [
     "preprintUrl": "https://doi.org/10.26434/chemrxiv.15007616/v1",
     "image": "/web-pics/paper-53-toc.png",
     "imageAlt": "Illustration of multistate model"
+  },
+  {
+    "number": 53,
+    "year": "2026",
+    "authors": "Zailing Song, Zengkui Liu, Fei Xia, Yuwei Zhang*, Xiang Sun*",
+    "title": "Coarse-Grained Nonadiabatic Dynamics in Disordered Condensed Phase",
+    "journalName": "Under Review",
+    "volume": "",
+    "locator": "",
+    "image": "/web-pics/paper-54-toc.png",
+    "imageAlt": "Illustration of coarse-grained nonadiabatic dynamics"
   },
   {
     "number": 52,
@@ -99,7 +99,7 @@ publications: [
     "specialIssue": "Future Leaders in Physical Chemistry",
     "specialIssueUrl": "https://pubs.acs.org/curated-content?journal=jpclcd&ref=feature",
     "image": "/web-pics/paper-51-toc.png",
-    "imageAlt": "Illustration of condensed-phase charge transfer"
+    "imageAlt": "Illustration of correlated bath effects"
   },
   {
     "number": 50,
@@ -113,7 +113,7 @@ publications: [
     "locator": "e70069 (2026).",
     "doiUrl": "https://doi.org/10.1002/wcms.70069",
     "image": "/web-pics/paper-50-toc.png",
-    "imageAlt": "Illustration of charge-transfer theory in condensed phases"
+    "imageAlt": "Illustration of photoinduced charge transfer"
   },
   {
     "number": 49,
