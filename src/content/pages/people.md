@@ -69,14 +69,6 @@ groups: [
     "heading": "Graduate students",
     "people": [
       {
-        "name": "Jialong Wang",
-        "role": "PhD Student",
-        "education": "B.S., University of Rochester",
-        "orcidUrl": "https://orcid.org/0009-0007-4023-5161",
-        "project": "Cavity quantum electrodynamics and charge transfer in solution",
-        "image": "/web-pics/people-jialong-wang.jpg"
-      },
-      {
         "name": "Zihan Zou",
         "role": "PhD Student",
         "education": "B.S., Qilu University of Technology",
