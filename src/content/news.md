@@ -11,6 +11,11 @@ labels: {
 }
 items: [
   {
+    "title": "Zailing's paper on coarse-grained NAMD is accepted by JCTC!",
+    "date": "2026-09-03",
+    "content": "Congrats, Zailing's paper on coarse-grained NAMD for photoinduced charge transfer in condensed-phase systems has been accepted by JCP!\n\n- Zailing Song, Zengkui Liu, Fei Xia, Yuwei Zhang, Xiang Sun, [Coarse-Grained Nonadiabatic Dynamics in Disordered Condensed Phases](https://doi.org/10.1021/acs.jctc.6c01363), *J. Chem. Theory Comput.* (DOI: 10.1021/acs.jctc.6c01363)",
+  },
+  {
     "title": "Zengkui receives Inaugural NYU Shanghai Outstanding PhD Dissertation Award!",
     "date": "2026-08-28",
     "content": "Zengkui on receiving the Inaugural NYU Shanghai Outstanding PhD Dissertation Award! In recognition of his brilliant work, he will each receive a monetary prize of RMB 5,000, along with a formal certificate commemorating this inaugural honor.",
