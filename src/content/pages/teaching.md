@@ -10,13 +10,13 @@ quoteCredit: "— Albert Einstein"
 philosophy: "My priority is to stimulate students’ curiosity about the natural sciences by making complex ideas easier to understand while preserving a broad view of the field. In chemistry and related courses, students develop a scientific mindset for approaching and solving problems systematically through universal concepts and principles."
 featuredCourse: {
   "label": "Most Recent Course",
-  "code": "CHEM-GA 9668",
-  "title": "Chemical Dynamics",
-  "term": "Spring 2026 · Shanghai",
-  "syllabusLabel": "View Syllabus",
-  "syllabusUrl": "https://wp.nyu.edu/xiangsun/files/2026/01/Syllabus_CHEM-GA9668_Spring2026.pdf"
+  "code": "PHYS-SHU 997",
+  "title": "Independent Study – Physics",
+  "term": "Fall 2026 · Shanghai",
+  "syllabusLabel": "Albert Link",
+  "syllabusUrl": "https://albert.nyu.edu/albert_index.html"
 }
-undergraduateIntro: "Foundational chemistry, physical chemistry, and mentored research experiences."
+undergraduateIntro: "Foundational chemistry and physics, physical chemistry, and mentored research experiences."
 graduateIntro: "Advanced theoretical and computational treatments of molecular systems and dynamics."
 undergraduateCourses: [
   {
@@ -65,13 +65,30 @@ undergraduateCourses: [
     "note": "Students interested in independent study with Prof. Sun should discuss their interests and possible research topics with him before enrolling so that an individual course plan can be developed."
   },
   {
+    "code": "PHYS-SHU 997",
+    "title": "Independent Study – Physics",
+    "terms": "Fall 2026 onward",
+    "location": "Shanghai",
+    "description": "A supervised research course that gives undergraduate students hands-on experience as members of an active physics research team. Students participate in group meetings and complete a written research report.",
+    "prerequisites": "Foundations of Science I–III or the corresponding introductory physics, chemistry, and biology sequences; minimum 3.0 GPA; faculty sponsorship and approval from the Director of Undergraduate Studies.",
+    "note": "Students interested in independent study with Prof. Sun should discuss their interests and possible research topics with him before enrolling so that an individual course plan can be developed."
+  },
+  {
     "code": "CHEM-SHU 999",
     "title": "Chemistry Undergraduate Research Thesis",
     "terms": "Fall 2021 onward",
     "location": "Shanghai",
     "description": "A research thesis course for chemistry majors who have completed at least one semester of laboratory research. Students prepare a publication-style thesis and defend it before a three-faculty committee.",
     "prerequisites": "CHEM-SHU 997 or 998 Independent Study; minimum 3.65 overall and science/mathematics GPA; permission of a faculty sponsor and the Dean of Arts & Sciences."
-  }
+  },
+  {
+    "code": "PHYS-SHU 999",
+    "title": "Physics Undergraduate Research Thesis",
+    "terms": "Fall 2026 onward",
+    "location": "Shanghai",
+    "description": "A research thesis course for physics majors who have completed at least one semester of laboratory research. Students prepare a publication-style thesis and defend it before a three-faculty committee.",
+    "prerequisites": "PHYS-SHU 997 or 998 Independent Study; minimum 3.65 overall and science/mathematics GPA; permission of a faculty sponsor and the Dean of Arts & Sciences."
+  },
 ]
 graduateCourses: [
   {

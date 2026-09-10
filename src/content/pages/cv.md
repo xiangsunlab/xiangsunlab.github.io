@@ -70,7 +70,7 @@ experience: [
 ]
 teaching: [
   "CHEM-SHU 651: Physical Chemistry: Quantum Mechanics and Spectroscopy, NYU Shanghai, Fall 2023 and Fall 2025",
-  "CHEM-GA 9668: Chemical Dynamics, NYU GSAS, Spring 2024",
+  "CHEM-GA 9668: Chemical Dynamics, NYU GSAS, Spring 2024, Spring 2026",
   "CHEM-GA 2666: Quantum Chemistry and Advanced Statistical Mechanics, New York, Spring 2023 and Spring 2025",
   "CHEM-GA 9666: Quantum Chemistry and Advanced Statistical Mechanics, Shanghai, Spring 2021",
   "CHEM-SHU 125: Foundations of Chemistry I, NYU Shanghai, Fall 2019, 2020, 2021, and 2024",
@@ -81,6 +81,8 @@ teaching: [
 ]
 awards: [
   "Young Scientists Program (Category B), National Natural Science Foundation of China, 2026",
+  "Shuguang Plan, Shanghai Municipal Education Commission, 2026",
+  "Easterm Talent Plan (Top-Notch Program), Shanghai Municipal Education Commission, 2026",
   "General Program, National Natural Science Foundation of China, 2022",
   "Young Scientists Program, National Natural Science Foundation of China, 2020",
   "Eastern Young Scholar, Shanghai Municipal Education Commission, 2019",
