@@ -62,9 +62,10 @@ publications: [
     "year": "2026",
     "authors": "Zailing Song, Zengkui Liu, Fei Xia, Yuwei Zhang*, Xiang Sun*",
     "title": "Coarse-Grained Nonadiabatic Dynamics in Disordered Condensed Phases",
+    "journal": "J. Chem. Theory Comput. 22, 9311-9331 (2026).",
     "journalName": "J. Chem. Theory Comput.",
-    "volume": "",
-    "locator": "(accepted)",
+    "volume": "22",
+    "locator": "9311-9331 (2026).",
     "doiUrl": "https://doi.org/10.1021/acs.jctc.6c01363",
     "image": "/web-pics/paper-54-toc.png",
     "imageAlt": "Illustration of coarse-grained nonadiabatic dynamics"
