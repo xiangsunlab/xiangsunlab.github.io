@@ -11,9 +11,14 @@ labels: {
 }
 items: [
   {
+    "title": "Hao's paper on multilayer MRC model is accepted by JCTC!",
+    "date": "2026-10-20",
+    "content": "Congrats, Hao's paper on multilayer MRC model for nonadiabatic dynamics in open quantum systems has been accepted by JCTC!\n\n- Hao Zeng, Xiang Sun, [Multilayer Multistate Reaction Coordinate Model for Nonadiabatic 2 Dynamics in Open Quantum Systems](https://doi.org/10.1021/acs.jctc.6c00858), *J. Chem. Theory Comput.* (DOI: 10.1021/acs.jctc.6c00858)",
+  },
+  {
     "title": "Zailing's paper on coarse-grained NAMD is accepted by JCTC!",
     "date": "2026-09-03",
-    "content": "Congrats, Zailing's paper on coarse-grained NAMD for photoinduced charge transfer in condensed-phase systems has been accepted by JCP!\n\n- Zailing Song, Zengkui Liu, Fei Xia, Yuwei Zhang, Xiang Sun, [Coarse-Grained Nonadiabatic Dynamics in Disordered Condensed Phases](https://doi.org/10.1021/acs.jctc.6c01363), *J. Chem. Theory Comput.* (DOI: 10.1021/acs.jctc.6c01363)",
+    "content": "Congrats, Zailing's paper on coarse-grained NAMD for photoinduced charge transfer in condensed-phase systems has been accepted by JCTC!\n\n- Zailing Song, Zengkui Liu, Fei Xia, Yuwei Zhang, Xiang Sun, [Coarse-Grained Nonadiabatic Dynamics in Disordered Condensed Phases](https://doi.org/10.1021/acs.jctc.6c01363), *J. Chem. Theory Comput.* (DOI: 10.1021/acs.jctc.6c01363)",
   },
   {
     "title": "Zengkui receives Inaugural NYU Shanghai Outstanding PhD Dissertation Award!",
